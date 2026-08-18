@@ -93,7 +93,7 @@ Ordered by dependency; lower numbers gate higher ones.
 
 | ID | Capability | Scope | Gates |
 |---|---|---|---|
-| E1 | **Ruleset / game-mode system** | Per-world `mode` extensible by mods: toggles for hunger survival, fall damage, ire source, hearts, weather extremes, spawn safety, PvE-only. The "modding out" mechanism. | everything (belt-quest ruleset) |
+| E1 | **Ruleset / game-mode system** | ✅ **LANDED** (WildForge `feat/capability-ramp`, `src/ruleset.rs`). Mods declare `[[mode]]` in `modes.toml` (base + 10 toggles: creative, hunger, fall_damage, drowning, lava_burn, hostile_spawns, ire, hearts, weather_extremes, pvp); `Registry::ruleset_for` / `World::ruleset` resolve the world's `mode` string; world + client gates wired. belt-quest ships `modes.toml` and creates worlds with its mode. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e1-ruleset.md`. | everything (belt-quest ruleset) |
 | E2 | **Third-person camera** | Over-shoulder chase cam (wall push-out, mouse aim), Tab toggle to orbit "factory" cam, persists camera per world/mode. | combat depth, all combat content |
 | E3 | **Player combat depth** | Stamina resource (attack/dodge/block/sprint gating, regen), light/light/heavy combo tracker, dodge with i-frames, block, backstab angle check, floating damage numbers, world-space enemy health bars. | E2 |
 | E4 | **Player stat surface** | Generalize the stat model to a modifier surface (health/stamina/carry/build-range/scan-range + derived), consumable & equipment & skill-modifiable. | E5, E6 |
