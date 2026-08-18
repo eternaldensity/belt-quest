@@ -1,0 +1,12 @@
+# belt-quest mod skeleton
+#
+# Content files are added as their upstream WildForge capabilities land
+# (see docs/port-plan.md Milestone A). This file exists so the mod has an
+# identity in WildForge's mod loader from day one.
+
+id = "belt_quest"
+name = "belt-quest"
+version = "0.1.0"
+world_api = 2
+# Depends on the belt-quest capabilities being present in the engine; the
+# mod is inert (loads nothing) until then.
