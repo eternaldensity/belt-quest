@@ -82,13 +82,14 @@ All of these are **generic WildForge capabilities** (usable by any mod),
 not belt-quest-specific. Each is a WildForge feature branch with tests.
 Ordered by dependency; lower numbers gate higher ones.
 
-> **E0 — Mod test harness.** Today a pure mod cannot ship Rust integration
-> tests against WildForge's internals (WildForge's test binary is built in
-> its own repo). Add a way for a mod repo to run `cargo test` against
-> WildForge with the mod installed (`--mod <path>` on a test runner, or a
-> `tests/` directory WildForge's test harness picks up). **Prerequisite
-> for this repo's CI and for every downstream capability to be verifiable
-> from here.**
+> **E0 — Mod test harness.** ✅ **LANDED** (WildForge `feat/capability-ramp`,
+> `src/mod_lint.rs`). `wildforge --mod-qualification <mods_dir>` runs the
+> shared qualification battery — mod load errors, material/arcane errors,
+> missing textures, content-graph obtainability, and script compile — and
+> exits non-zero on failure. The engine's own content-graph suite delegates
+> to it. belt-quest CI installs the mod into a WildForge checkout's `mods/`
+> tree and gates on `--mod-qualification` exit 0. Task brief:
+> `docs/extension-plans/wildforge-task-brief-capability-e0-mod-harness.md`.
 
 | ID | Capability | Scope | Gates |
 |---|---|---|---|
@@ -237,14 +238,19 @@ belt-quest/
   docs/                     # this plan + capability task briefs once owned here
   src/tools/                # helper scripts (content lint, .toml schema checks)
   Cargo.toml                # dev-only: test harness pinning a WildForge checkout
-  .gitmodules               # WildForge pinned (submodule or git dep) for E0 CI
+  .gitmodules               # WildForge pinned (submodule or git dep) for CI
 ```
 
-CI (once E0 lands): install mod into a pinned WildForge checkout, run
-`cargo test --lib`, clippy `-D warnings`, plus a mod-content lint
-(register all ids, recipes balance against the material ledger,
-textures exist). Until E0, this repo carries the plan + content skeletons
-only.
+CI (E0 landed): install the mod into a pinned WildForge checkout's `mods/`
+tree, then run:
+1. `cargo test --lib` and `cargo clippy --lib --tests -- -D warnings` on
+   the WildForge checkout (the shared harness + full suite prove content).
+2. `wildforge --mod-qualification mods` — gate on exit 0. This is the
+   mod-content lint: all ids register, recipes balance against the
+   material ledger, textures exist, every item is reachable in survival,
+   and every `main.rhai` compiles.
+
+Until content exists, this repo carries the plan + content skeletons only.
 
 ---
 
