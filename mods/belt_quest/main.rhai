@@ -24,7 +24,7 @@ fn accept_settling_in() {
     hud_message("Quest accepted: Settling In.");
 }
 
-fn herbs_available() -> bool {
+fn herbs_available() {
     storage_get("quest_first_errand") != "done"
 }
 

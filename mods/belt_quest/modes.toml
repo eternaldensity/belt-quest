@@ -10,6 +10,7 @@ base = "survival"
 hunger = false
 hearts = false
 hostile_spawns = false
+nest_spawns = true
 pvp = false
 skills = true
 equipment = true

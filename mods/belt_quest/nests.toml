@@ -12,8 +12,43 @@ cap = 3
 
 [[nest]]
 id = "brood_den"
-block = "belt_quest:spider_burrow"
+block = "belt_quest:brood_egg_cluster"
 species = "belt_quest:brood_mother"
 radius = 20.0
 interval = 6.0
 cap = 1
+
+# Tier-2 territory: corrupted fauna den at the region's edges; the
+# scrap hounds den where the first wave's machines fell.
+
+[[nest]]
+id = "stalker_lair"
+block = "belt_quest:stalker_lair"
+species = "belt_quest:corrupted_stalker"
+radius = 18.0
+interval = 25.0
+cap = 2
+
+[[nest]]
+id = "boar_wallow"
+block = "belt_quest:wallow_mud"
+species = "belt_quest:corrupted_boar"
+radius = 18.0
+interval = 30.0
+cap = 2
+
+[[nest]]
+id = "bear_den"
+block = "belt_quest:bear_den"
+species = "belt_quest:cave_bear"
+radius = 20.0
+interval = 40.0
+cap = 1
+
+[[nest]]
+id = "hound_kennel"
+block = "belt_quest:scrap_pile"
+species = "belt_quest:scrap_hound"
+radius = 16.0
+interval = 22.0
+cap = 2

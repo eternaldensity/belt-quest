@@ -75,3 +75,35 @@ id = "spider_burrow"
 name = "Spider Burrow"
 texture = "@gravel"
 hardness = 2.0
+
+# Tier-2 dens (capability E9): one block per species — a nest record
+# resolves by marker block, so dens never share.
+[[block]]
+id = "stalker_lair"
+name = "Stalker Lair"
+texture = "@packed_earth"
+hardness = 2.0
+
+[[block]]
+id = "wallow_mud"
+name = "Corrupted Wallow"
+texture = "@dirt"
+hardness = 2.0
+
+[[block]]
+id = "bear_den"
+name = "Bear Den"
+texture = "@stone_anvil"
+hardness = 2.5
+
+[[block]]
+id = "scrap_pile"
+name = "Scrap Pile"
+texture = "@cracked_masonry"
+hardness = 2.0
+
+[[block]]
+id = "brood_egg_cluster"
+name = "Egg Cluster"
+texture = "@amber_glass"
+hardness = 2.0

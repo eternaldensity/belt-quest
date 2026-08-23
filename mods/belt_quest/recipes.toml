@@ -119,3 +119,27 @@ station = "belt_quest:assembler"
 pattern = ["vgc"]
 keys = { v = "venom_sac", g = "base:glass_bottle", c = "raw_chitin" }
 output = "belt_quest:venom_injector"
+
+# ---- combat breadth (C3) ----
+
+[[recipe]]
+pattern = ["i", "w", "w"]
+keys = { i = "base:iron_ingot", w = "base:plant_fiber" }
+output = "belt_quest:iron_spear"
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["s", "w", "w"]
+keys = { s = "base:steel_ingot", w = "base:plant_fiber" }
+output = "belt_quest:steel_spear"
+
+[[recipe]]
+pattern = [" i", "wi"]
+keys = { i = "base:iron_ingot", w = "base:planks" }
+output = "belt_quest:iron_maul"
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["cgc", "igi"]
+keys = { c = "belt_quest:copper_wire", g = "base:iron_gear", i = "base:iron_ingot" }
+output = "belt_quest:coil_carbine"

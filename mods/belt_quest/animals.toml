@@ -59,3 +59,142 @@ drops = [
 body = { size = [14, 9, 18], at = [0, 5, 0] }
 head = { size = [9, 8, 9], at = [0, 6, -11] }
 leg = { size = [2, 6, 2], at = [6, 0, 6] }
+
+# ---- combat breadth (C3): tiers 2-3 (belts 08-enemies-and-ecology) ----
+# Corrupted fauna haunt the region within ~500m of alien influence;
+# machines guard what the first colonists left behind.
+
+[[animal]]
+id = "corrupted_stalker"
+name = "Corrupted Stalker"
+hostile = true
+biomes = ["plains", "forest"]
+health = 80
+speed = 3.6
+attack = 5
+tex = "@frost_shard"
+sound_pitch = 0.7
+aggro_range = 18
+ire_min = 20
+group = [1, 1]
+rarity = 1
+behavior = "sniper"
+sniper = { keep_min = 8, keep_max = 16 }
+resist = [
+  { type = "slash", mult = 0.5 },
+]
+attacks = [
+  { name = "claws", kind = "melee", damage = 6, cooldown = 1.4, damage_type = "slash" },
+  { name = "acid_spit", kind = "projectile", damage = 5, cooldown = 3.0, range = 15,
+    damage_type = "fire",
+    projectile = { tex = "@amber_glass", damage = 5, speed = 12, cooldown = 3.0 } },
+]
+drops = [
+  { item = "corrupted_tissue", min = 1, max = 2 },
+  { item = "acid_gland", min = 0, max = 1 },
+]
+[animal.model]
+body = { size = [8, 8, 14], at = [0, 4, 0] }
+head = { size = [6, 6, 8], at = [0, 8, -8] }
+leg = { size = [2, 4, 2], at = [3, 0, 4] }
+
+[[animal]]
+id = "corrupted_boar"
+name = "Corrupted Boar"
+hostile = true
+biomes = ["forest"]
+health = 110
+speed = 2.8
+attack = 6
+tex = "@boar"
+sound_pitch = 0.55
+aggro_range = 14
+ire_min = 20
+group = [1, 1]
+rarity = 1
+behavior = "tank"
+tank = { knockback_mult = 0.35 }
+resist = [
+  { type = "slash", mult = 0.7 },
+]
+attacks = [
+  { name = "gore", kind = "melee", damage = 8, cooldown = 1.8, damage_type = "pierce" },
+  { name = "charge", kind = "charge", damage = 12, cooldown = 9.0, range = 14, damage_type = "blunt" },
+]
+drops = [
+  { item = "corrupted_tissue", min = 1, max = 2 },
+  { item = "base:hide", min = 1, max = 2 },
+]
+[animal.model]
+body = { size = [10, 8, 16], at = [0, 3, 0] }
+head = { size = [7, 6, 8], at = [0, 5, -10] }
+leg = { size = [3, 3, 3], at = [3, 0, 5] }
+
+[[animal]]
+id = "cave_bear"
+name = "Cave Bear"
+hostile = true
+biomes = ["plains"]
+health = 160
+speed = 2.4
+attack = 9
+tex = "@bronze_block"
+sound_pitch = 0.45
+aggro_range = 12
+ire_min = 30
+group = [1, 1]
+rarity = 1
+behavior = "tank"
+tank = { knockback_mult = 0.2 }
+attacks = [
+  { name = "swipe", kind = "melee", damage = 9, cooldown = 2.2, damage_type = "blunt" },
+]
+drops = [
+  { item = "base:raw_bear", min = 2, max = 3 },
+  { item = "base:hide", min = 2, max = 3 },
+]
+[animal.model]
+body = { size = [12, 12, 18], at = [0, 6, 0] }
+head = { size = [8, 8, 8], at = [0, 10, -11] }
+leg = { size = [4, 6, 4], at = [4, 0, 6] }
+
+# A machine left from the first wave: hack it with the right tool and it
+# powers down intact; destroy it for scrap.
+[[animal]]
+id = "scrap_hound"
+name = "Scrap Hound"
+hostile = true
+biomes = ["plains"]
+health = 60
+speed = 4.8
+attack = 5
+tex = "@cracked_masonry"
+sound_pitch = 1.25
+aggro_range = 14
+ire_min = 25
+group = [1, 2]
+rarity = 1
+behavior = "construct"
+hack = {
+  tool = "hack",
+  drops = [
+    { item = "scrap_plate", min = 1, max = 2 },
+    { item = "base:screw", min = 1, max = 3 },
+  ],
+}
+resist = [
+  { type = "pierce", mult = 0.5 },
+  { type = "slash", mult = 0.5 },
+  { type = "fire", mult = 1.5 },
+]
+attacks = [
+  { name = "arc_lash", kind = "melee", damage = 5, cooldown = 1.2, damage_type = "fire" },
+]
+drops = [
+  { item = "scrap_plate", min = 1, max = 2 },
+  { item = "base:copper_wire", min = 0, max = 2 },
+]
+[animal.model]
+body = { size = [6, 5, 12], at = [0, 3, 0] }
+head = { size = [5, 5, 6], at = [0, 4, -8] }
+leg = { size = [2, 3, 2], at = [2, 0, 4] }

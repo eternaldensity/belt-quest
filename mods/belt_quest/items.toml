@@ -7,39 +7,34 @@
 [[item]]
 id = "copper_wire"
 name = "Copper Wire"
-texture = "@leather_strip"
+texture = "@copper_ingot"
 material_class = "geologically_finite"
-materials = { copper = 600 }
 
 [[item]]
 id = "circuit"
 name = "Circuit"
-texture = "@crystal_prism"
+texture = "@red_glass"
 material_class = "transformative_finite"
-materials = { iron = 1200, copper = 1800 }
 
 [[item]]
 id = "machine_frame"
 name = "Machine Frame"
-texture = "@iron_shaft"
+texture = "@iron_block"
 material_class = "geologically_finite"
-materials = { iron = 4800 }
 
 # ---- consumables: the factory feeds the delver ----
 
 [[item]]
 id = "quest_herbs"
 name = "Medicinal Herbs"
-texture = "@cairnbloom_flower"
+texture = "@bush_fruited"
 material_class = "renewable"
-materials = { wood = 60 }
 
 [[item]]
 id = "health_stim"
 name = "Health Stim"
-texture = "@hearth_tonic"
+texture = "@teal_glass"
 material_class = "transformative_finite"
-materials = { wood = 120, coal = 300 }
 food = { hunger = 4, nutrition = { health = 8 } }
 
 [[item]]
@@ -47,7 +42,6 @@ id = "steel_ration_bar"
 name = "Ration Bar"
 texture = "@bread"
 material_class = "renewable"
-materials = { wood = 90 }
 food = { hunger = 3, nutrition = { health = 6 } }
 
 # ---- modular equipment, frames (belts 02-modular-equipment) ----
@@ -62,7 +56,6 @@ texture = "@leather_chestplate"
 durability = 80
 armor = { slot = "chest", points = 2 }
 frame = { slots = [ { type = "plate", max = 1 }, { type = "lining", max = 1 } ] }
-materials = { leather = 3600, iron = 1200 }
 [[item.stats]]
 kind = "carry"
 flat = 24
@@ -75,7 +68,6 @@ durability = 120
 damage = 6
 damage_type = "slash"
 frame = { slots = [ { type = "blade", max = 1 }, { type = "grip", max = 1 } ] }
-materials = { wood = 600, iron = 2400 }
 
 # ---- modular equipment, components ----
 
@@ -87,7 +79,6 @@ component = "blade"
 durability = 100
 damage = 3
 damage_type = "slash"
-materials = { iron = 2400 }
 [[item.stats]]
 kind = "health"
 flat = 2
@@ -100,7 +91,6 @@ component = "blade"
 durability = 160
 damage = 5
 damage_type = "slash"
-materials = { steel = 2400 }
 [[item.stats]]
 kind = "health"
 flat = 4
@@ -110,7 +100,6 @@ id = "wood_grip"
 name = "Wood Grip"
 texture = "@plant_fiber"
 component = "grip"
-materials = { wood = 900 }
 [[item.stats]]
 kind = "stamina_regen"
 mult_permille = 1100
@@ -121,7 +110,6 @@ name = "Iron Plate Armor"
 texture = "@iron_chestplate"
 component = "plate"
 durability = 90
-materials = { iron = 2400 }
 [[item.stats]]
 kind = "health"
 flat = 4
@@ -129,10 +117,9 @@ flat = 4
 [[item]]
 id = "chitin_carapace"
 name = "Chitin Carapace"
-texture = "@scar_fragment"
+texture = "@cracked_masonry"
 component = "plate"
 durability = 140
-materials = { chitin = 2400 }
 [[item.stats]]
 kind = "health"
 flat = 8
@@ -140,9 +127,8 @@ flat = 8
 [[item]]
 id = "cloth_lining"
 name = "Cloth Lining"
-texture = "@filter_cloth"
+texture = "@leather"
 component = "lining"
-materials = { leather = 900 }
 [[item.stats]]
 kind = "move_speed"
 mult_permille = 1050
@@ -150,12 +136,11 @@ mult_permille = 1050
 [[item]]
 id = "venom_injector"
 name = "Venom Injector"
-texture = "@glass_bottle"
+texture = "@glass"
 component = "grip"
 durability = 60
 damage = 2
 damage_type = "fire"
-materials = { glass = 600, venom = 900 }
 [[item.stats]]
 kind = "move_speed"
 mult_permille = 1080
@@ -166,13 +151,68 @@ mult_permille = 1080
 [[item]]
 id = "raw_chitin"
 name = "Raw Chitin"
-texture = "@scar_fragment"
+texture = "@cracked_masonry"
 material_class = "renewable"
-materials = { chitin = 600 }
 
 [[item]]
 id = "venom_sac"
 name = "Venom Sac"
-texture = "@glass_bottle"
+texture = "@glass"
 material_class = "transformative_finite"
-materials = { venom = 900 }
+
+# ---- combat breadth (C3): weapons across the damage classes ----
+# The engine's damage classes are open strings; enemies key their
+# resistances on them. Slash/pierce/blunt come from Haven's forge;
+# fire comes from the Brood Gallery's venom; corrupt flesh resists
+# slash, machines resist everything but blunt and fire.
+
+[[item]]
+id = "iron_spear"
+name = "Iron Spear"
+texture = "@stick"
+durability = 110
+damage = 5
+damage_type = "pierce"
+
+[[item]]
+id = "steel_spear"
+name = "Steel Spear"
+texture = "@steel_axe"
+durability = 150
+damage = 7
+damage_type = "pierce"
+
+[[item]]
+id = "iron_maul"
+name = "Iron Maul"
+texture = "@stone_anvil"
+durability = 140
+damage = 9
+damage_type = "blunt"
+
+[[item]]
+id = "coil_carbine"
+name = "Coil Carbine"
+texture = "@hunting_bow"
+durability = 90
+bow = { damage = 10, speed = 30 }
+
+# ---- corrupt & machine materials ----
+
+[[item]]
+id = "corrupted_tissue"
+name = "Corrupted Tissue"
+texture = "@verdigris_powder"
+material_class = "transformative_finite"
+
+[[item]]
+id = "acid_gland"
+name = "Acid Gland"
+texture = "@glass"
+material_class = "transformative_finite"
+
+[[item]]
+id = "scrap_plate"
+name = "Scrap Plate"
+texture = "@cracked_masonry"
+material_class = "geologically_finite"
