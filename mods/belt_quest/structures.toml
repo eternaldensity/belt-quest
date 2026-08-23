@@ -19,3 +19,12 @@ entries = [
   { item = "venom_sac", weight = 2, count = [1, 2] },
   { item = "base:old_coin", weight = 2, count = [10, 25] },
 ]
+
+[[loot]]
+id = "mineshaft_cache"
+entries = [
+  { item = "base:coal", weight = 3, count = [3, 8] },
+  { item = "base:raw_iron", weight = 3, count = [2, 6] },
+  { item = "scrap_plate", weight = 2, count = [1, 3] },
+  { item = "base:screw", weight = 2, count = [2, 5] },
+]

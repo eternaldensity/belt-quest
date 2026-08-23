@@ -56,3 +56,17 @@ rewards = [
   { item = "base:old_coin", count = 75 },
   { item = "belt_quest:light_melee_frame", count = 1 },
 ]
+
+# The Foreman's conduit lock: solved valves complete this hidden quest;
+# its rewards open the sealed corridor and teach the Scrap Rig.
+
+[[quest]]
+id = "mines_conduits"
+title = "The Foreman's Lock"
+description = "Route the dead conduits of the Abandoned Mines."
+objectives = [
+  { key = "routed", description = "Find the powered valve order", count = 1 },
+]
+rewards = [
+  { set_flag = "mines_conduits", flag_value = "true" },
+]

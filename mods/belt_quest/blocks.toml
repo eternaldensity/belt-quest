@@ -107,3 +107,13 @@ id = "brood_egg_cluster"
 name = "Egg Cluster"
 texture = "@amber_glass"
 hardness = 2.0
+
+# The Foreman's conduit lock (capability E11 puzzle): press the valves in
+# the authored order and the sealed corridor opens (see main.rhai).
+[[block]]
+id = "conduit_hub"
+name = "Conduit Hub"
+texture = { top = "@copper_block", side = "@iron_block" }
+hardness = 3.0
+tool = "pickaxe"
+interaction = "screen:belt_quest:conduits"

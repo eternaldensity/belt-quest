@@ -1,0 +1,11 @@
+# Flag-gated doors (spec 2.5). The mines' conduit lock reads the
+# mines_conduits player flag, set by solving the valve puzzle.
+
+[[feature]]
+type = "gate"
+id = "sealed_mines_door"
+block = "base:cracked_masonry"
+flag = "mines_conduits"
+value = "true"
+unlocked_block = "base:air"
+message = "Dead conduits. Somewhere here there is a hub that still has power."

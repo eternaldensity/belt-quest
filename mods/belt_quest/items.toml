@@ -216,3 +216,24 @@ id = "scrap_plate"
 name = "Scrap Plate"
 texture = "@cracked_masonry"
 material_class = "geologically_finite"
+
+
+# ---- C5: dungeon rewards ----
+
+[[item]]
+id = "foreman_blueprint"
+name = "Foreman's Rig Schematic"
+texture = "@etched_tablet"
+material_class = "exceptional"
+
+[[item]]
+id = "scrap_rig"
+name = "Scrap Rig"
+texture = "@steel_chestplate"
+durability = 160
+armor = { slot = "chest", points = 4 }
+frame = { slots = [ { type = "plate", max = 2 }, { type = "lining", max = 1 }, { type = "utility", max = 1 } ] }
+materials = { copper = 600, iron = 10200 }
+[[item.stats]]
+kind = "carry"
+flat = 48

@@ -5,6 +5,9 @@ fn on_screen_click(screen, action) {
     if screen == "belt_quest:board" && action == "pin_notice" {
         hud_message("Marek will want to hear that idea. Find him at the hall.");
     }
+    if screen == "belt_quest:conduits" && action.starts_with("valve_") {
+        on_screen_click_valve(action.substr(6));
+    }
 }
 
 // First Threat: Jonas counts wolves. Base's wolf is `base:wolf`.
@@ -51,4 +54,29 @@ fn greet_first_threat() {
 
 fn accept_first_threat() {
     quest_accept("first_threat");
+}
+
+// ---- C5: the Foreman's conduit lock ----
+// Valves must be pressed in the authored order (humming, brass, steel,
+// copper). A wrong press resets the lock. Solving completes the hidden
+// quest whose reward unseals the corridor and teaches the Scrap Rig.
+
+fn on_screen_click_valve(order) {
+    let n = storage_get("valves");
+    let seq = if n == "" { "" } else { n };
+    let next = seq + order;
+    // The authored order, one letter per valve: d, a, c, b.
+    if !"dacb".starts_with(next) {
+        storage_set("valves", "");
+        hud_message("The conduits hiss and reset.");
+        return;
+    }
+    storage_set("valves", next);
+    if next == "dacb" {
+        hud_message("Deep below the floor, something unlocks.");
+        quest_progress("mines_conduits", "routed", 1);
+        play_sound("craft");
+    } else {
+        hud_message("The hub clicks. Another valve hums awake.");
+    }
 }

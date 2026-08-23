@@ -30,3 +30,30 @@ prefix = "First Threat: "
 [[screen.button]]
 label = "Pin a notice of your own"
 action = "pin_notice"
+
+# The Foreman's conduit lock (capability E11 as a puzzle): valves must be
+# pressed in the authored order; main.rhai judges the sequence and opens
+# the sealed corridor via a quest reward. Wrong valve — the lock resets.
+
+[[screen]]
+id = "conduits"
+title = "Conduit Hub"
+
+[[screen.label]]
+text = "Four dead valves. One of them still hums."
+
+[[screen.button]]
+label = "Press the brass valve"
+action = "valve_a"
+
+[[screen.button]]
+label = "Press the copper valve"
+action = "valve_b"
+
+[[screen.button]]
+label = "Press the steel valve"
+action = "valve_c"
+
+[[screen.button]]
+label = "Press the humming valve"
+action = "valve_d"

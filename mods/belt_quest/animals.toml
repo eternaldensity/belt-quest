@@ -198,3 +198,39 @@ drops = [
 body = { size = [6, 5, 12], at = [0, 3, 0] }
 head = { size = [5, 5, 6], at = [0, 4, -8] }
 leg = { size = [2, 3, 2], at = [2, 0, 4] }
+
+# The Abandoned Mines' boss: the first wave's foreman, fused into his own
+# exosuit. Calls hounds; hates fire.
+[[animal]]
+id = "the_foreman"
+name = "The Foreman"
+hostile = true
+biomes = ["plains"]
+health = 180
+speed = 2.6
+attack = 8
+tex = "@cracked_masonry"
+sound_pitch = 0.4
+aggro_range = 16
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "controller"
+controller = { spawn = "belt_quest:scrap_hound", count = 2, interval = 14.0, max = 3 }
+resist = [
+  { type = "pierce", mult = 0.6 },
+  { type = "slash", mult = 0.6 },
+  { type = "blunt", mult = 1.25 },
+]
+attacks = [
+  { name = "pile_drive", kind = "melee", damage = 9, cooldown = 2.0, damage_type = "blunt" },
+  { name = "charge", kind = "charge", damage = 12, cooldown = 8.0, range = 13, damage_type = "blunt" },
+]
+drops = [
+  { item = "scrap_plate", min = 3, max = 5 },
+  { item = "foreman_blueprint", min = 1, max = 1 },
+]
+[animal.model]
+body = { size = [11, 14, 10], at = [0, 6, 0] }
+head = { size = [7, 7, 7], at = [0, 12, -6] }
+leg = { size = [3, 6, 3], at = [4, 0, 3] }

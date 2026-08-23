@@ -143,3 +143,12 @@ station = "belt_quest:assembler"
 pattern = ["cgc", "igi"]
 keys = { c = "belt_quest:copper_wire", g = "base:iron_gear", i = "base:iron_ingot" }
 output = "belt_quest:coil_carbine"
+
+# The Foreman's schematic teaches this rig (capability C5 blueprint loop):
+# solve the conduit lock, learn the recipe, build it at the assembler.
+[[recipe]]
+tech = "learned:belt_quest:scrap_rig"
+station = "belt_quest:assembler"
+pattern = ["ppp", "pcp", "iii"]
+keys = { p = "base:plate", c = "belt_quest:circuit", i = "base:iron_ingot" }
+output = "belt_quest:scrap_rig"

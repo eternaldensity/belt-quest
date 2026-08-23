@@ -11,3 +11,4 @@ name = "belt-quest"
 version = "0.1.0"
 world_api = 2
 depends = ["base"]
+retrogen = "untouched_host_only"

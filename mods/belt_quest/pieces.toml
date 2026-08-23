@@ -263,3 +263,233 @@ terrain = "none"
 
 [assembly.dungeon]
 reset = 900.0
+
+# ---------------- the Abandoned Mines (C5) ----------------
+# The first wave dug deep and left in a hurry. Their foreman never left.
+
+[[piece]]
+id = "mines_gate"
+connectors = [
+  { du = 5, dy = 0, dv = 3, kind = "tunnel", facing = "east" },
+]
+markers = [
+  { du = 1, dy = 1, dv = 5, kind = "spawn:nest:belt_quest:mines_hounds" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:spruce_log" },
+  { du = 1, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 2, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 5, dy = 0, dv = 1, block = "base:spruce_log" },
+  { du = 0, dy = 0, dv = 2, block = "base:packed_earth" },
+  { du = 5, dy = 0, dv = 2, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 3, block = "base:packed_earth" },
+  { du = 5, dy = 0, dv = 3, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 4, block = "base:spruce_log" },
+  { du = 1, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 2, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 5, dy = 0, dv = 4, block = "base:spruce_log" },
+  { du = 2, dy = 1, dv = 5, block = "belt_quest:wayshrine" },
+]
+
+[[piece]]
+id = "mines_puzzle"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "tunnel", facing = "west" },
+  { du = 6, dy = 0, dv = 2, kind = "tunnel", facing = "east" },
+]
+markers = [
+  # The sealed corridor east opens only when the conduits are routed.
+  { du = 5, dy = 1, dv = 2, kind = "feature:belt_quest:sealed_mines_door" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 5, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 6, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 6, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 6, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 5, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 6, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 1, dy = 1, dv = 2, block = "belt_quest:conduit_hub" },
+]
+
+[[piece]]
+id = "mines_gallery"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "tunnel", facing = "west" },
+  { du = 6, dy = 0, dv = 2, kind = "tunnel", facing = "east" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 0, loot = "belt_quest:mineshaft_cache" },
+]
+markers = [
+  { du = 2, dy = 1, dv = 4, kind = "spawn:nest:belt_quest:mines_hounds" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 1, dy = 0, dv = 1, block = "base:coal_ore" },
+  { du = 2, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 1, block = "base:iron_ore" },
+  { du = 4, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 5, dy = 0, dv = 1, block = "base:coal_ore" },
+  { du = 6, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 2, block = "base:packed_earth" },
+  { du = 6, dy = 0, dv = 2, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 3, block = "base:packed_earth" },
+  { du = 6, dy = 0, dv = 3, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 1, dy = 0, dv = 4, block = "base:iron_ore" },
+  { du = 2, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 4, block = "base:gravel" },
+  { du = 4, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 5, dy = 0, dv = 4, block = "base:coal_ore" },
+  { du = 6, dy = 0, dv = 4, block = "base:packed_earth" },
+]
+
+[[piece]]
+id = "foreman_den"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "tunnel", facing = "west" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 0, loot = "belt_quest:brood_hoard" },
+  { du = 5, dy = 1, dv = 3, loot = "belt_quest:mineshaft_cache" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 2, kind = "spawn:nest:belt_quest:foreman_den" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:cracked_masonry" },
+  { du = 1, dy = 0, dv = 1, block = "base:stone" },
+  { du = 2, dy = 0, dv = 1, block = "base:stone" },
+  { du = 3, dy = 0, dv = 1, block = "base:stone" },
+  { du = 4, dy = 0, dv = 1, block = "base:stone" },
+  { du = 5, dy = 0, dv = 1, block = "base:cracked_masonry" },
+  { du = 0, dy = 0, dv = 2, block = "base:cracked_masonry" },
+  { du = 5, dy = 0, dv = 2, block = "base:cracked_masonry" },
+  { du = 0, dy = 0, dv = 3, block = "base:cracked_masonry" },
+  { du = 5, dy = 0, dv = 3, block = "base:cracked_masonry" },
+  { du = 0, dy = 0, dv = 4, block = "base:cracked_masonry" },
+  { du = 1, dy = 0, dv = 4, block = "base:stone" },
+  { du = 2, dy = 0, dv = 4, block = "base:stone" },
+  { du = 3, dy = 0, dv = 4, block = "base:stone" },
+  { du = 4, dy = 0, dv = 4, block = "base:stone" },
+  { du = 5, dy = 0, dv = 4, block = "base:cracked_masonry" },
+  { du = 5, dy = 1, dv = 1, block = "belt_quest:way_out" },
+]
+
+[[pool]]
+id = "mines"
+entries = [
+  { piece = "mines_puzzle", weight = 2 },
+  { piece = "mines_gallery", weight = 3 },
+]
+
+[[assembly]]
+id = "mineshaft_depths"
+biomes = ["plains"]
+rarity = 1
+entry = "mines_gate"
+pools = { tunnel = "mines" }
+max_depth = 4
+max_pieces = 7
+terrain = "none"
+
+[assembly.dungeon]
+reset = 1200.0
+
+# ---------------- creature lair (C5) ----------------
+# A short, mean fight den: no puzzle, no blueprint — meat and hides.
+
+[[piece]]
+id = "lair_mouth"
+connectors = [
+  { du = 5, dy = 0, dv = 3, kind = "trail", facing = "east" },
+]
+markers = [
+  { du = 1, dy = 1, dv = 5, kind = "spawn:nest:belt_quest:bear_den" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:stone" },
+  { du = 1, dy = 0, dv = 1, block = "base:gravel" },
+  { du = 2, dy = 0, dv = 1, block = "base:stone" },
+  { du = 3, dy = 0, dv = 1, block = "base:gravel" },
+  { du = 4, dy = 0, dv = 1, block = "base:stone" },
+  { du = 5, dy = 0, dv = 1, block = "base:stone" },
+  { du = 0, dy = 0, dv = 2, block = "base:stone" },
+  { du = 5, dy = 0, dv = 2, block = "base:stone" },
+  { du = 0, dy = 0, dv = 3, block = "base:stone" },
+  { du = 5, dy = 0, dv = 3, block = "base:stone" },
+  { du = 0, dy = 0, dv = 4, block = "base:stone" },
+  { du = 1, dy = 0, dv = 4, block = "base:gravel" },
+  { du = 2, dy = 0, dv = 4, block = "base:stone" },
+  { du = 3, dy = 0, dv = 4, block = "base:gravel" },
+  { du = 4, dy = 0, dv = 4, block = "base:stone" },
+  { du = 5, dy = 0, dv = 4, block = "base:stone" },
+  { du = 2, dy = 1, dv = 5, block = "belt_quest:wayshrine" },
+]
+
+[[piece]]
+id = "lair_den"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "trail", facing = "west" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 1, loot = "belt_quest:gallery_cache" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 2, kind = "spawn:nest:belt_quest:bear_den" },
+  { du = 1, dy = 1, dv = 3, kind = "spawn:nest:belt_quest:spider_burrow" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:mossy_cobblestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:stone" },
+  { du = 2, dy = 0, dv = 1, block = "base:stone" },
+  { du = 3, dy = 0, dv = 1, block = "base:bone" },
+  { du = 4, dy = 0, dv = 1, block = "base:stone" },
+  { du = 5, dy = 0, dv = 1, block = "base:mossy_cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:mossy_cobblestone" },
+  { du = 5, dy = 0, dv = 2, block = "base:mossy_cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:mossy_cobblestone" },
+  { du = 5, dy = 0, dv = 3, block = "base:mossy_cobblestone" },
+  { du = 0, dy = 0, dv = 4, block = "base:mossy_cobblestone" },
+  { du = 1, dy = 0, dv = 4, block = "base:bone" },
+  { du = 2, dy = 0, dv = 4, block = "base:stone" },
+  { du = 3, dy = 0, dv = 4, block = "base:bone" },
+  { du = 4, dy = 0, dv = 4, block = "base:stone" },
+  { du = 5, dy = 0, dv = 4, block = "base:mossy_cobblestone" },
+  { du = 5, dy = 1, dv = 4, block = "belt_quest:way_out" },
+]
+
+[[pool]]
+id = "lair"
+entries = [
+  { piece = "lair_den", weight = 1 },
+]
+
+[[assembly]]
+id = "creature_lair"
+biomes = ["plains"]
+rarity = 1
+entry = "lair_mouth"
+pools = { trail = "lair" }
+max_depth = 2
+max_pieces = 2
+terrain = "none"
+
+[assembly.dungeon]
+reset = 600.0

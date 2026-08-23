@@ -52,3 +52,21 @@ species = "belt_quest:scrap_hound"
 radius = 16.0
 interval = 22.0
 cap = 2
+
+# The Abandoned Mines: the Foreman's hounds den along the old galleries.
+
+[[nest]]
+id = "mines_hounds"
+block = "belt_quest:scrap_pile"
+species = "belt_quest:scrap_hound"
+radius = 16.0
+interval = 18.0
+cap = 2
+
+[[nest]]
+id = "foreman_den"
+block = "belt_quest:brood_egg_cluster"
+species = "belt_quest:the_foreman"
+radius = 22.0
+interval = 6.0
+cap = 1
