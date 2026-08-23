@@ -1,0 +1,991 @@
+# belt-quest skill tree (capability E5; authored tree in
+# belts rpg-plan/06-skill-tree.md). Six visible branches; the hidden
+# Temporal branch arrives with the Chronarch arc (Act 3). Where a belts
+# mechanic has no E4 stat channel yet, the closest stat stands in and the
+# description keeps the authored promise for a future capability pass.
+# Tier-N nodes unlock after 3 tier-(N-1) allocations in-branch (engine rule).
+
+schema_version = 1
+
+[tree]
+max_level = 80
+points_per_level = 1
+xp_base = 100.0
+xp_exponent = 1.5
+
+[[xp_source]]
+id = "mine"
+base = 6
+decay = 0.25
+
+[[xp_source]]
+id = "build"
+base = 5
+decay = 0.25
+
+[[xp_source]]
+id = "craft"
+base = 12
+decay = 0.3
+
+[[xp_source]]
+id = "smelt"
+base = 14
+decay = 0.3
+
+[[xp_source]]
+id = "kill"
+base = 22
+decay = 0.2
+
+[[xp_source]]
+id = "fish"
+base = 8
+decay = 0.25
+
+[[xp_source]]
+id = "harvest"
+base = 6
+decay = 0.25
+
+[[branch]]
+id = "survivalist"
+name = "Survivalist"
+
+[[branch.node]]
+id = "tough_hide"
+name = "Tough Hide"
+tier = 1
+cost = 1
+description = "+15% max health."
+[[branch.node.stats]]
+kind = "health"
+mult_permille = 1150
+
+[[branch.node]]
+id = "second_wind"
+name = "Second Wind"
+tier = 1
+cost = 1
+description = "Stamina recovers 25% faster out of combat."
+[[branch.node.stats]]
+kind = "stamina_regen"
+mult_permille = 1250
+
+[[branch.node]]
+id = "forager"
+name = "Forager"
+tier = 1
+cost = 1
+description = "Herbs and organics haul twice as much per trip."
+[[branch.node.stats]]
+kind = "carry"
+flat = 6
+
+[[branch.node]]
+id = "thick_skin"
+name = "Thick Skin"
+tier = 1
+cost = 1
+description = "+10% physical resilience (+1 heart)."
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "iron_constitution"
+name = "Iron Constitution"
+tier = 2
+cost = 2
+description = "+25% max health."
+[[branch.node.stats]]
+kind = "health"
+mult_permille = 1250
+
+[[branch.node]]
+id = "endurance_runner"
+name = "Endurance Runner"
+tier = 2
+cost = 2
+description = "Sprint costs 30% less stamina."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 3
+
+[[branch.node]]
+id = "field_medic"
+name = "Field Medic"
+tier = 2
+cost = 2
+description = "Stims hit harder; you recover faster under pressure."
+[[branch.node.stats]]
+kind = "stamina_regen"
+mult_permille = 1150
+
+[[branch.node]]
+id = "elemental_conditioning"
+name = "Elemental Conditioning"
+tier = 2
+cost = 2
+description = "+2 hearts against the elements."
+[[branch.node.stats]]
+kind = "health"
+flat = 4
+
+[[branch.node]]
+id = "unbreakable"
+name = "Unbreakable"
+tier = 3
+cost = 3
+description = "Walk out of hits that should have ended you (+6 hearts)."
+[[branch.node.stats]]
+kind = "health"
+flat = 6
+
+[[branch.node]]
+id = "environmental_mastery"
+name = "Environmental Mastery"
+tier = 3
+cost = 3
+description = "Biome hazards barely register (+3 hearts)."
+[[branch.node.stats]]
+kind = "health"
+flat = 6
+
+[[branch.node]]
+id = "resourceful"
+name = "Resourceful"
+tier = 3
+cost = 3
+description = "Carry the spare parts that save a run."
+[[branch.node.stats]]
+kind = "carry"
+flat = 8
+
+[[branch.node]]
+id = "regeneration"
+name = "Regeneration"
+tier = 3
+cost = 3
+description = "Out of combat you stitch yourself back together."
+[[branch.node.stats]]
+kind = "stamina_regen"
+mult_permille = 1300
+
+[[branch.node]]
+id = "immortal_resolve"
+name = "Immortal Resolve"
+tier = 4
+cost = 4
+description = "+15% max health on top of everything else."
+[[branch.node.stats]]
+kind = "health"
+mult_permille = 1150
+
+[[branch.node]]
+id = "adaptive_biology"
+name = "Adaptive Biology"
+tier = 4
+cost = 4
+description = "Whatever nearly killed you last time won't (+8 hearts)."
+[[branch.node.stats]]
+kind = "health"
+flat = 8
+
+[[branch]]
+id = "warrior"
+name = "Warrior"
+
+[[branch.node]]
+id = "weapon_training"
+name = "Weapon Training"
+tier = 1
+cost = 1
+description = "Longer sessions at the dummy: +2 stamina."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 2
+
+[[branch.node]]
+id = "steady_aim"
+name = "Steady Aim"
+tier = 1
+cost = 1
+description = "You read a fight from further out (+3 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "quick_reflexes"
+name = "Quick Reflexes"
+tier = 1
+cost = 1
+description = "Dodge i-frames last 20% longer; feet agree (+8% speed)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1080
+
+[[branch.node]]
+id = "combat_awareness"
+name = "Combat Awareness"
+tier = 1
+cost = 1
+description = "Enemies within 15m register on your radar (+4 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 4
+
+[[branch.node]]
+id = "power_strike"
+name = "Power Strike"
+tier = 2
+cost = 2
+description = "Heavy attacks deal +30% and stagger reliably (+3 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 3
+
+[[branch.node]]
+id = "sharpshooter"
+name = "Sharpshooter"
+tier = 2
+cost = 2
+description = "Weak points glow from further away (+3 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "combo_fighter"
+name = "Combo Fighter"
+tier = 2
+cost = 2
+description = "Consecutive hits escalate (+2 stamina per link)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 2
+
+[[branch.node]]
+id = "weapon_specialist"
+name = "Weapon Specialist"
+tier = 2
+cost = 2
+description = "Your best weapon feels lighter (+2 stamina, +2 hearts)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 2
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "tactical_retreat"
+name = "Tactical Retreat"
+tier = 2
+cost = 2
+description = "Blocking dodges reposition you 5m back (+6% speed)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1060
+
+[[branch.node]]
+id = "berserker"
+name = "Berserker"
+tier = 3
+cost = 3
+description = "Below 30% health: +40% damage, +20% attack speed (+4 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 4
+
+[[branch.node]]
+id = "deadeye"
+name = "Deadeye"
+tier = 3
+cost = 3
+description = "Crits deal 3x instead of 2x (+3 scan range to find the gap)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "whirlwind"
+name = "Whirlwind"
+tier = 3
+cost = 3
+description = "Spinning AoE strike — stamina-heavy, hits everything within 3m (+6 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 6
+
+[[branch.node]]
+id = "executioner"
+name = "Executioner"
+tier = 3
+cost = 3
+description = "Enemies below 20% health take +50% from you (+2 hearts of confidence)."
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "counter_strike"
+name = "Counter-Strike"
+tier = 3
+cost = 3
+description = "A perfect dodge triggers an automatic counterattack (+10% speed)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1100
+
+[[branch.node]]
+id = "weapon_mastery"
+name = "Weapon Mastery"
+tier = 4
+cost = 4
+description = "Attacks ignore 30% of enemy resistance (+5 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 5
+
+[[branch.node]]
+id = "battle_fury"
+name = "Battle Fury"
+tier = 4
+cost = 4
+description = "Kills extend your combo and restore 10% stamina (+4 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 4
+
+[[branch]]
+id = "engineer"
+name = "Engineer"
+
+[[branch.node]]
+id = "quick_builder"
+name = "Quick Builder"
+tier = 1
+cost = 1
+description = "Building placement speed +25% (+6% hands)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1060
+
+[[branch.node]]
+id = "extended_reach"
+name = "Extended Reach"
+tier = 1
+cost = 1
+description = "Build range +1 block."
+[[branch.node.stats]]
+kind = "build_range"
+flat = 1
+
+[[branch.node]]
+id = "efficient_research"
+name = "Efficient Research"
+tier = 1
+cost = 1
+description = "The lab runs 10% hotter (+2 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "material_science"
+name = "Material Science"
+tier = 1
+cost = 1
+description = "Crafted components hold tolerance (+2 stamina of focus)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 2
+
+[[branch.node]]
+id = "master_planner"
+name = "Master Planner"
+tier = 2
+cost = 2
+description = "Blueprint capture size +50% (+1 reach to lay it out)."
+[[branch.node.stats]]
+kind = "build_range"
+flat = 1
+
+[[branch.node]]
+id = "overclocker"
+name = "Overclocker"
+tier = 2
+cost = 2
+description = "Production buildings can be pushed past rating (+3 stamina of nerve)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 3
+
+[[branch.node]]
+id = "network_optimizer"
+name = "Network Optimizer"
+tier = 2
+cost = 2
+description = "Less transmission loss across the grid (+2 hearts near live machinery)."
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "turret_engineer"
+name = "Turret Engineer"
+tier = 2
+cost = 2
+description = "Your turrets deal +20%, reach +25% (+2 scan range to sight them)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "repair_specialist"
+name = "Repair Specialist"
+tier = 2
+cost = 2
+description = "Repair kits restore 50% more (+2 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 2
+
+[[branch.node]]
+id = "industrial_genius"
+name = "Industrial Genius"
+tier = 3
+cost = 3
+description = "All production +10%, research +20% (+1 reach, +2 scan)."
+[[branch.node.stats]]
+kind = "build_range"
+flat = 1
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "remote_management"
+name = "Remote Management"
+tier = 3
+cost = 3
+description = "Configure buildings within 100m of rail stations (+3 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "fortification_expert"
+name = "Fortification Expert"
+tier = 3
+cost = 3
+description = "Walls +50% HP, turrets auto-reload faster (+4 hearts behind your walls)."
+[[branch.node.stats]]
+kind = "health"
+flat = 4
+
+[[branch.node]]
+id = "experimental_overcharge"
+name = "Experimental Overcharge"
+tier = 3
+cost = 3
+description = "Overclock to 200% at 400% power — at a price (+5 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 5
+
+[[branch.node]]
+id = "factory_mind"
+name = "Factory Mind"
+tier = 4
+cost = 4
+description = "Buildings within 50m run 15% faster around you (+2 reach)."
+[[branch.node.stats]]
+kind = "build_range"
+flat = 2
+
+[[branch.node]]
+id = "grand_architect"
+name = "Grand Architect"
+tier = 4
+cost = 4
+description = "3x3 mega-buildings (+2 reach, +8 carry of blueprints)."
+[[branch.node.stats]]
+kind = "build_range"
+flat = 2
+[[branch.node.stats]]
+kind = "carry"
+flat = 8
+
+[[branch]]
+id = "logistics"
+name = "Logistics"
+
+[[branch.node]]
+id = "pack_mule"
+name = "Pack Mule"
+tier = 1
+cost = 1
+description = "+5 inventory slots."
+[[branch.node.stats]]
+kind = "carry"
+flat = 5
+
+[[branch.node]]
+id = "swift_feet"
+name = "Swift Feet"
+tier = 1
+cost = 1
+description = "Movement speed +10%."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1100
+
+[[branch.node]]
+id = "train_conductor"
+name = "Train Conductor"
+tier = 1
+cost = 1
+description = "Trains ride 15% faster under your hand (+2 carry of timetables)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 2
+
+[[branch.node]]
+id = "efficient_packing"
+name = "Efficient Packing"
+tier = 1
+cost = 1
+description = "Items weigh 10% less (+4 carry)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 4
+
+[[branch.node]]
+id = "deep_pockets"
+name = "Deep Pockets"
+tier = 2
+cost = 2
+description = "+10 slots, +50% weight limit."
+[[branch.node.stats]]
+kind = "carry"
+flat = 10
+
+[[branch.node]]
+id = "pathfinder"
+name = "Pathfinder"
+tier = 2
+cost = 2
+description = "Reveal terrain wider while exploring (+3 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "supply_chain_master"
+name = "Supply Chain Master"
+tier = 2
+cost = 2
+description = "Automated deliveries grant +25% reputation (+6 carry)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 6
+
+[[branch.node]]
+id = "quick_swap"
+name = "Quick Swap"
+tier = 2
+cost = 2
+description = "Loadout presets swap in 1s instead of 3 (+3 stamina of muscle memory)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 3
+
+[[branch.node]]
+id = "parkour"
+name = "Parkour"
+tier = 2
+cost = 2
+description = "Climb 2x faster, softer falls (+8% speed)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1080
+
+[[branch.node]]
+id = "quantum_pockets"
+name = "Quantum Pockets"
+tier = 3
+cost = 3
+description = "Weight -50%, stacks doubled."
+[[branch.node.stats]]
+kind = "carry"
+flat = 12
+
+[[branch.node]]
+id = "cartographer"
+name = "Cartographer"
+tier = 3
+cost = 3
+description = "Full regional map; dungeons show on the minimap (+4 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 4
+
+[[branch.node]]
+id = "trade_baron"
+name = "Trade Baron"
+tier = 3
+cost = 3
+description = "Market prices permanently 30% better (+8 carry of samples)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 8
+
+[[branch.node]]
+id = "express_transit"
+name = "Express Transit"
+tier = 3
+cost = 3
+description = "Station transfers are instant (+5% speed between them)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1050
+
+[[branch.node]]
+id = "fleet_footed"
+name = "Fleet Footed"
+tier = 3
+cost = 3
+description = "Sprint +30%; dodge mid-sprint (+12% speed)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1120
+
+[[branch.node]]
+id = "express_network"
+name = "Express Network"
+tier = 4
+cost = 4
+description = "Your rails run themselves (+10 carry of manifests, +2 scan)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 10
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch]]
+id = "diplomat"
+name = "Diplomat"
+
+[[branch.node]]
+id = "friendly_face"
+name = "Friendly Face"
+tier = 1
+cost = 1
+description = "+15% reputation from all sources (+2 hearts of goodwill)."
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "haggler"
+name = "Haggler"
+tier = 1
+cost = 1
+description = "10% better prices at settlements (+4 carry of leverage)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 4
+
+[[branch.node]]
+id = "quest_seeker"
+name = "Quest Seeker"
+tier = 1
+cost = 1
+description = "Settlements offer +1 additional quest (+2 scan range for notices)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "keen_observer"
+name = "Keen Observer"
+tier = 1
+cost = 1
+description = "Dialogue reveals hints (+2 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "inspiring_leader"
+name = "Inspiring Leader"
+tier = 2
+cost = 2
+description = "Settlements grow 25% faster (+3 hearts of presence)."
+[[branch.node.stats]]
+kind = "health"
+flat = 3
+
+[[branch.node]]
+id = "recruiter"
+name = "Recruiter"
+tier = 2
+cost = 2
+description = "Hire NPC workers for outposts (+6 carry of payroll)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 6
+
+[[branch.node]]
+id = "information_network"
+name = "Information Network"
+tier = 2
+cost = 2
+description = "Objectives revealed when talking to NPCs (+3 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "negotiator"
+name = "Negotiator"
+tier = 2
+cost = 2
+description = "Quest rewards 20% better (+3 stamina of nerve)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 3
+
+[[branch.node]]
+id = "cultural_fluency"
+name = "Cultural Fluency"
+tier = 2
+cost = 2
+description = "Reputation decay halved everywhere (+2 hearts)."
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "settlement_architect"
+name = "Settlement Architect"
+tier = 3
+cost = 3
+description = "Unique settlement buildings (+1 build range)."
+[[branch.node.stats]]
+kind = "build_range"
+flat = 1
+
+[[branch.node]]
+id = "allied_forces"
+name = "Allied Forces"
+tier = 3
+cost = 3
+description = "Base attacks pull allied supply drops (+4 hearts, +4 carry of gratitude)."
+[[branch.node.stats]]
+kind = "health"
+flat = 4
+[[branch.node.stats]]
+kind = "carry"
+flat = 4
+
+[[branch.node]]
+id = "diplomat_branch"
+name = "Diplomat"
+tier = 3
+cost = 3
+description = "Faction-wide reputation (+2 scan range of connections)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "merchant_prince"
+name = "Merchant Prince"
+tier = 3
+cost = 3
+description = "Bulk trade orders at 15% discount (+8 carry)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 8
+
+[[branch.node]]
+id = "spymaster"
+name = "Spymaster"
+tier = 3
+cost = 3
+description = "Enemy movements revealed on the map (+4 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 4
+
+[[branch.node]]
+id = "governor"
+name = "Governor"
+tier = 4
+cost = 4
+description = "Exalted settlements produce autonomously (+12 carry, +2 hearts of station)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 12
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch]]
+id = "explorer"
+name = "Explorer"
+
+[[branch.node]]
+id = "eagle_eye"
+name = "Eagle Eye"
+tier = 1
+cost = 1
+description = "Scan range +30%."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "dungeon_sense"
+name = "Dungeon Sense"
+tier = 1
+cost = 1
+description = "Entrance conditions read without a scanner (+2 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "treasure_hunter"
+name = "Treasure Hunter"
+tier = 1
+cost = 1
+description = "+25% bonus loot in dungeon chests (+4 carry out)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 4
+
+[[branch.node]]
+id = "light_step"
+name = "Light Step"
+tier = 1
+cost = 1
+description = "Movement noise down 30% (+6% speed, quieter)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1060
+
+[[branch.node]]
+id = "puzzle_instinct"
+name = "Puzzle Instinct"
+tier = 2
+cost = 2
+description = "Interactable puzzle elements catch the eye (+2 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "trap_sense"
+name = "Trap Sense"
+tier = 2
+cost = 2
+description = "Hazards highlight red within 8m (+2 hearts of caution)."
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "lore_scholar"
+name = "Lore Scholar"
+tier = 2
+cost = 2
+description = "Data logs teach twice as fast (+2 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 2
+
+[[branch.node]]
+id = "shadow_walker"
+name = "Shadow Walker"
+tier = 2
+cost = 2
+description = "Crouch +40%, detection -40% (+8% speed)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1080
+
+[[branch.node]]
+id = "geologist"
+name = "Geologist"
+tier = 2
+cost = 2
+description = "Ore quality reads true; hidden veins within 20m (+3 scan range)."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "dungeon_master"
+name = "Dungeon Master"
+tier = 3
+cost = 3
+description = "Cleared rooms stay cleared twice as long (+3 hearts below)."
+[[branch.node.stats]]
+kind = "health"
+flat = 3
+
+[[branch.node]]
+id = "relic_hunter"
+name = "Relic Hunter"
+tier = 3
+cost = 3
+description = "Boss drops one more unique component (+6 carry of relics)."
+[[branch.node.stats]]
+kind = "carry"
+flat = 6
+
+[[branch.node]]
+id = "sixth_sense"
+name = "Sixth Sense"
+tier = 3
+cost = 3
+description = "Boss telegraphs read 0.5s early (+3 stamina of readiness)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 3
+
+[[branch.node]]
+id = "infiltrator"
+name = "Infiltrator"
+tier = 3
+cost = 3
+description = "Bypass one sealed door per dungeon (+1 reach to slip past)."
+[[branch.node.stats]]
+kind = "build_range"
+flat = 1
+
+[[branch.node]]
+id = "world_walker"
+name = "World Walker"
+tier = 4
+cost = 4
+description = "No terrain slows you (+12% speed everywhere)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1120
+
+[[branch.node]]
+id = "legend"
+name = "Legend"
+tier = 4
+cost = 4
+description = "Discovered places remember you (+5 hearts of legend)."
+[[branch.node.stats]]
+kind = "health"
+flat = 5
