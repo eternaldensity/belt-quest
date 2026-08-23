@@ -242,8 +242,16 @@ loop and proves the factory↔RPG fusion end to end.
 >   Spark, First Threat); quest-board screen (E11); main.rhai kill
 >   tracking + callbacks.
 >
-> Next within B: in-engine playtest pass (spawn near Haven, walk the arc),
-> then C3 combat breadth / C6 skill-tree data per Milestone C.
+> Next within B: in-engine playtest pass (spawn near Haven, walk the arc).
+>
+> **C3 combat breadth: first wave LANDED** (same commit family). Engine
+> follow-up shipped first: nest spawning split from the hostile ring
+> (`Ruleset.nest_spawns`, no heart gate) — without it, belt-quest's mode
+> and the Deep's dungeons had dead dens. Content: iron/steel spears,
+> iron maul, coil carbine (bow-slot); corrupted stalker (E9 sniper +
+> acid spit), corrupted boar (tank + gore/charge), cave bear (tank),
+> scrap hound (E9 construct — hackable); per-species dens; corrupt &
+> machine drops feed the assembler chain.
 
 **Milestone C — Content completion.**
 C3 combat breadth → C5 dungeon set → C6 skill tree data → C8 alien arc →
