@@ -265,6 +265,14 @@ loop and proves the factory↔RPG fusion end to end.
 >   bear den + spider burrow, cache chest, no frills.
 > - Blueprint loop v1: rare boss drops are collectibles; advanced gear
 >   unlocks via tech-gated recipes whose keys ride quest rewards.
+>
+> **C6 skill-tree data LANDED.** Six visible branches (Survivalist,
+> Warrior, Engineer, Logistics, Diplomat, Explorer), **90 authored
+> nodes** at per-tier costs 1–4, XP sources tuned with diminishing
+> returns. Where a belts mechanic lacks an E4 stat channel the closest
+> stat stands in and the description keeps the authored promise. The
+> hidden Temporal branch ships with C9. Engine follow-up: xp-source
+> duplicates are now first-wins — two skill mods can coexist.
 
 **Milestone C — Content completion.**
 C3 combat breadth → C5 dungeon set → C6 skill tree data → C8 alien arc →
