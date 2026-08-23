@@ -252,6 +252,19 @@ loop and proves the factory↔RPG fusion end to end.
 > acid spit), corrupted boar (tank + gore/charge), cave bear (tank),
 > scrap hound (E9 construct — hackable); per-species dens; corrupt &
 > machine drops feed the assembler chain.
+>
+> **C5 dungeon set: second + third dungeons LANDED.**
+> - **Abandoned Mines** (`mineshaft_depths`): first-colonist theme;
+>   gate → puzzle gallery → ore galleries → Foreman's den. The conduit
+>   lock is a real puzzle — four valves on an E11 screen judged by
+>   script in an authored order; solving completes a hidden quest whose
+>   reward sets the flag that opens the `feature:`-sealed corridor and
+>   teaches the blueprint-gated **Scrap Rig**. Boss: **The Foreman**
+>   (controller summoning hounds; hates blunt).
+> - **Creature Lair** (`creature_lair`): short two-piece fight den —
+>   bear den + spider burrow, cache chest, no frills.
+> - Blueprint loop v1: rare boss drops are collectibles; advanced gear
+>   unlocks via tech-gated recipes whose keys ride quest rewards.
 
 **Milestone C — Content completion.**
 C3 combat breadth → C5 dungeon set → C6 skill tree data → C8 alien arc →
