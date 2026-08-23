@@ -223,6 +223,28 @@ modular gear (C2), starter dungeon + one boss (C5), first quest arc (C7
 reused quest format). This mirrors belts Phases 0–2 as a thin but complete
 loop and proves the factory↔RPG fusion end to end.
 
+> ✅ **B1 SLICE LANDED** (`mods/belt_quest/`, first content commit).
+> Authored against the landed engine, all gated by `--mod-qualification`
+> PASS + the full WildForge suite green with the mod installed:
+> - **Mode** `belt_quest` (E1): hunger/hearts/ring-spawns/pvp off; skills +
+>   equipment + industrial ire on. Enemies arrive only through nests.
+> - **Factory core (C1)**: Smelter (forge handler) + Assembler
+>   (workbench handler) machines; copper wire/circuit/health-stim chain;
+>   station recipes exist only at the Assembler.
+> - **Modular gear (C2)**: Light Harness + Light Melee Frame with typed
+>   component slots (blade/grip/plate/lining); chitin components complete
+>   the harness.
+> - **Brood Gallery (C5/E10)**: Deep-door assembly — gate → run → hoard,
+>   wayshrines, burrow-nest spiders (E9 rusher), **The Brood Mother**
+>   (E9 controller, spider-summoning tank) with the authored hoard.
+> - **Haven (C4/B4)**: Marek/Sal/Ava/Jonas as patrol NPCs with dialogue
+>   trees driving four authored quests (Settling In, First Errand, The
+>   Spark, First Threat); quest-board screen (E11); main.rhai kill
+>   tracking + callbacks.
+>
+> Next within B: in-engine playtest pass (spawn near Haven, walk the arc),
+> then C3 combat breadth / C6 skill-tree data per Milestone C.
+
 **Milestone C — Content completion.**
 C3 combat breadth → C5 dungeon set → C6 skill tree data → C8 alien arc →
 C7 economy → C9 Chronarch. Reuses belts' authored content wholesale where
