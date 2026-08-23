@@ -1,0 +1,31 @@
+# belt-quest machine kinds (capability E7). The factory is the crafting
+# system: the SMELTER (forge handler) batch-smelts the [[smelt]] rows, and
+# the ASSEMBLER (workbench handler) crafts every `station` recipe from the
+# player's inventory. Both feed regional ire while they run (E12).
+
+schema_version = 1
+
+[[machine]]
+id = "smelter"
+label = "Smelter"
+handler = "forge"
+mouth = "belt_quest:smelter"
+mouth_lit = "belt_quest:smelter_lit"
+fire_secs = 90.0
+charge_slots = 4
+fuel_slots = 4
+items_per_fuel = 2
+min_charge = 1
+min_fuel = 1
+
+[[machine]]
+id = "assembler"
+label = "Assembler"
+handler = "workbench"
+mouth = "belt_quest:assembler"
+fire_secs = 0.0
+charge_slots = 0
+fuel_slots = 0
+items_per_fuel = 1
+min_charge = 0
+min_fuel = 0

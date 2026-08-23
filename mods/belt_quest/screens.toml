@@ -1,0 +1,32 @@
+# Haven's quest board (capability E11): a public face for the arc. The
+# kv_labels read the same flags the quests write; the button is a flavor
+# action handled in main.rhai.
+
+schema_version = 1
+
+[[screen]]
+id = "board"
+title = "Haven Quest Board"
+
+[[screen.label]]
+text = "Work needing doing, pay posted. Ask after them by name."
+
+[[screen.kv_label]]
+key = "quest_settling_in"
+prefix = "Settling In: "
+
+[[screen.kv_label]]
+key = "quest_first_errand"
+prefix = "First Errand: "
+
+[[screen.kv_label]]
+key = "quest_the_spark"
+prefix = "The Spark: "
+
+[[screen.kv_label]]
+key = "quest_first_threat"
+prefix = "First Threat: "
+
+[[screen.button]]
+label = "Pin a notice of your own"
+action = "pin_notice"

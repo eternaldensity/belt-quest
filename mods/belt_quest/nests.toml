@@ -1,0 +1,19 @@
+# Spider burrows (capability E9): the Brood Gallery's population arrives
+# through these, capped per den. Breaking a burrow block clears the nest
+# record and stops the respawns.
+
+[[nest]]
+id = "spider_burrow"
+block = "belt_quest:spider_burrow"
+species = "belt_quest:cave_spider"
+radius = 14.0
+interval = 12.0
+cap = 3
+
+[[nest]]
+id = "brood_den"
+block = "belt_quest:spider_burrow"
+species = "belt_quest:brood_mother"
+radius = 20.0
+interval = 6.0
+cap = 1

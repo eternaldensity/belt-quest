@@ -1,0 +1,41 @@
+# Haven (starter settlement, belts 03-world-and-settlements): four
+# authored voices. Textures alias base tiles for the slice.
+
+[[npc]]
+id = "elder_marek"
+name = "Elder Marek"
+tex = "@iron_helmet"
+dialogue = "marek"
+talk_radius = 3.5
+sound_pitch = 0.8
+patrol = [[0.0, 0.0, 0.0], [1.5, 0.0, 0.0]]
+pause = 4.0
+
+[[npc]]
+id = "tinkerer_sal"
+name = "Tinkerer Sal"
+tex = "@copper_hoe"
+dialogue = "sal"
+talk_radius = 3.0
+sound_pitch = 1.1
+patrol = [[0.0, 0.0, 0.0], [0.0, 0.0, 1.5]]
+pause = 3.0
+
+[[npc]]
+id = "merchant_ava"
+name = "Ava"
+tex = "@leather_chestplate"
+dialogue = "ava"
+talk_radius = 3.0
+sound_pitch = 1.2
+pause = 3.0
+
+[[npc]]
+id = "guard_jonas"
+name = "Jonas"
+tex = "@iron_chestplate"
+dialogue = "jonas"
+talk_radius = 3.5
+sound_pitch = 0.9
+patrol = [[0.0, 0.0, 0.0], [2.0, 0.0, 0.0], [2.0, 0.0, -1.0]]
+pause = 3.0

@@ -1,0 +1,61 @@
+# Belt-quest enemies for the slice (belts 08-enemies-and-ecology, tier 1).
+# Damage tuned to WildForge's half-heart scale; behaviors ride the E9
+# archetypes. Both are nest-bound: they arrive only through burrows, and
+# breaking a burrow stops them.
+
+[[animal]]
+id = "cave_spider"
+name = "Cave Spider"
+hostile = true
+biomes = ["plains"]
+health = 25
+speed = 4.5
+attack = 4
+tex = "@gravel"
+sound_pitch = 1.4
+aggro_range = 10
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "rusher"
+rusher = { rush_mult = 2.2 }
+drops = [
+  { item = "raw_chitin", min = 1, max = 1 },
+  { item = "venom_sac", min = 0, max = 1 },
+]
+[animal.model]
+body = { size = [7, 4, 9], at = [0, 2, 0] }
+head = { size = [5, 4, 5], at = [0, 2, -6] }
+leg = { size = [1, 3, 1], at = [3, 0, 3] }
+
+[[animal]]
+id = "brood_mother"
+name = "The Brood Mother"
+hostile = true
+biomes = ["plains"]
+health = 140
+speed = 2.2
+attack = 7
+tex = "@gravel"
+sound_pitch = 0.5
+aggro_range = 16
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "controller"
+controller = { spawn = "belt_quest:cave_spider", count = 2, interval = 15.0, max = 4 }
+resist = [
+  { type = "slash", mult = 0.75 },
+]
+attacks = [
+  { name = "bite", kind = "melee", damage = 7, cooldown = 1.6, damage_type = "blunt" },
+  { name = "lunge", kind = "charge", damage = 10, cooldown = 7.0, range = 12, damage_type = "blunt" },
+]
+drops = [
+  { item = "raw_chitin", min = 4, max = 6 },
+  { item = "venom_sac", min = 1, max = 2 },
+]
+[animal.model]
+body = { size = [14, 9, 18], at = [0, 5, 0] }
+head = { size = [9, 8, 9], at = [0, 6, -11] }
+leg = { size = [2, 6, 2], at = [6, 0, 6] }

@@ -1,0 +1,265 @@
+# Two assemblies (capability E7-era piece walks).
+#
+# HAVEN: the starter settlement, biome-gated like base's elder_haven. The
+# workshop piece carries a live Smelter and Assembler — the factory exists
+# before the player does; The Spark teaches you to feed it.
+#
+# BROOD GALLERY: the starter dungeon (capability E10). Never worldgen — a
+# run stamps it into the Deep on demand through its Deep Door. Burrow
+# markers bring spiders; the den brings the Brood Mother.
+
+# ---------------- Haven ----------------
+
+[[piece]]
+id = "haven_hall"
+connectors = [
+  { du = 6, dy = 0, dv = 3, kind = "street", facing = "east" },
+]
+markers = [
+  { du = 2, dy = 1, dv = 2, kind = "spawn:npc:belt_quest:elder_marek" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 1, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 2, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 3, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 4, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 5, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 6, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 0, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 6, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 2, block = "belt_quest:quest_board" },
+  { du = 6, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 6, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 6, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 5, block = "base:limestone_bricks" },
+  { du = 1, dy = 0, dv = 5, block = "base:limestone_bricks" },
+  { du = 2, dy = 0, dv = 5, block = "base:limestone_bricks" },
+  { du = 3, dy = 0, dv = 5, block = "base:limestone_bricks" },
+  { du = 4, dy = 0, dv = 5, block = "base:limestone_bricks" },
+  { du = 5, dy = 0, dv = 5, block = "base:limestone_bricks" },
+  { du = 6, dy = 0, dv = 5, block = "base:limestone_bricks" },
+]
+
+[[piece]]
+id = "haven_market"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "street", facing = "west" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 2, kind = "spawn:npc:belt_quest:merchant_ava" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 0, loot = "belt_quest:gallery_cache" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:planks" },
+  { du = 1, dy = 0, dv = 1, block = "base:planks" },
+  { du = 2, dy = 0, dv = 1, block = "base:planks" },
+  { du = 3, dy = 0, dv = 1, block = "base:planks" },
+  { du = 4, dy = 0, dv = 1, block = "base:planks" },
+  { du = 5, dy = 0, dv = 1, block = "base:planks" },
+  { du = 0, dy = 0, dv = 2, block = "base:planks" },
+  { du = 5, dy = 0, dv = 2, block = "base:planks" },
+  { du = 0, dy = 0, dv = 3, block = "base:planks" },
+  { du = 5, dy = 0, dv = 3, block = "base:planks" },
+  { du = 0, dy = 1, dv = 0, block = "base:spruce_log" },
+  { du = 5, dy = 1, dv = 0, block = "base:spruce_log" },
+  { du = 2, dy = 2, dv = 0, block = "base:spruce_planks" },
+  { du = 3, dy = 2, dv = 0, block = "base:spruce_planks" },
+  { du = 4, dy = 2, dv = 0, block = "base:spruce_planks" },
+]
+
+[[piece]]
+id = "haven_workshop"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "street", facing = "west" },
+]
+markers = [
+  { du = 1, dy = 1, dv = 1, kind = "spawn:npc:belt_quest:tinkerer_sal" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 4, block = "base:cobblestone" },
+  # The factory exists before the player does.
+  { du = 1, dy = 1, dv = 3, block = "belt_quest:smelter" },
+  { du = 3, dy = 1, dv = 3, block = "belt_quest:assembler" },
+  # Sal left the Spark's materials by the door.
+  { du = 4, dy = 1, dv = 1, block = "base:chest" },
+]
+
+[[piece]]
+id = "haven_wall"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "street", facing = "west" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 2, kind = "spawn:npc:belt_quest:guard_jonas" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 1, dy = 1, dv = 0, block = "base:cobblestone" },
+  { du = 2, dy = 2, dv = 0, block = "base:cobblestone" },
+  { du = 3, dy = 1, dv = 0, block = "base:cobblestone" },
+  { du = 1, dy = 1, dv = 4, block = "base:cobblestone" },
+  { du = 2, dy = 2, dv = 4, block = "base:cobblestone" },
+  { du = 3, dy = 1, dv = 4, block = "base:cobblestone" },
+]
+
+[[pool]]
+id = "haven"
+entries = [
+  { piece = "haven_market", weight = 2 },
+  { piece = "haven_workshop", weight = 2 },
+  { piece = "haven_wall", weight = 2 },
+]
+
+[[assembly]]
+id = "haven"
+biomes = ["plains", "forest"]
+rarity = 200
+entry = "haven_hall"
+pools = { street = "haven" }
+max_depth = 2
+max_pieces = 4
+terrain = "none"
+
+# ---------------- the Brood Gallery ----------------
+
+[[piece]]
+id = "gallery_gate"
+connectors = [
+  { du = 5, dy = 0, dv = 3, kind = "tunnel", facing = "east" },
+]
+markers = [
+  { du = 1, dy = 1, dv = 5, kind = "spawn:nest:belt_quest:spider_burrow" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:limestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:limestone" },
+  { du = 2, dy = 0, dv = 1, block = "base:limestone" },
+  { du = 3, dy = 0, dv = 1, block = "base:limestone" },
+  { du = 4, dy = 0, dv = 1, block = "base:limestone" },
+  { du = 5, dy = 0, dv = 1, block = "base:limestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:limestone" },
+  { du = 5, dy = 0, dv = 2, block = "base:limestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:limestone" },
+  { du = 5, dy = 0, dv = 3, block = "base:limestone" },
+  { du = 0, dy = 0, dv = 4, block = "base:limestone" },
+  { du = 1, dy = 0, dv = 4, block = "base:limestone" },
+  { du = 2, dy = 0, dv = 4, block = "base:limestone" },
+  { du = 3, dy = 0, dv = 4, block = "base:limestone" },
+  { du = 4, dy = 0, dv = 4, block = "base:limestone" },
+  { du = 5, dy = 0, dv = 4, block = "base:limestone" },
+  { du = 0, dy = 1, dv = 5, block = "base:limestone" },
+  { du = 2, dy = 1, dv = 5, block = "belt_quest:wayshrine" },
+  { du = 4, dy = 1, dv = 5, block = "base:limestone" },
+]
+
+[[piece]]
+id = "gallery_run"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "tunnel", facing = "west" },
+  { du = 6, dy = 0, dv = 2, kind = "tunnel", facing = "east" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 4, kind = "spawn:nest:belt_quest:spider_burrow" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:stone" },
+  { du = 1, dy = 0, dv = 1, block = "base:gravel" },
+  { du = 2, dy = 0, dv = 1, block = "base:stone" },
+  { du = 3, dy = 0, dv = 1, block = "base:gravel" },
+  { du = 4, dy = 0, dv = 1, block = "base:stone" },
+  { du = 5, dy = 0, dv = 1, block = "base:gravel" },
+  { du = 6, dy = 0, dv = 1, block = "base:stone" },
+  { du = 0, dy = 0, dv = 2, block = "base:stone" },
+  { du = 6, dy = 0, dv = 2, block = "base:stone" },
+  { du = 0, dy = 0, dv = 3, block = "base:stone" },
+  { du = 6, dy = 0, dv = 3, block = "base:stone" },
+  { du = 0, dy = 0, dv = 4, block = "base:stone" },
+  { du = 1, dy = 0, dv = 4, block = "base:gravel" },
+  { du = 2, dy = 0, dv = 4, block = "base:stone" },
+  { du = 3, dy = 0, dv = 4, block = "base:gravel" },
+  { du = 4, dy = 0, dv = 4, block = "base:stone" },
+  { du = 5, dy = 0, dv = 4, block = "base:gravel" },
+  { du = 6, dy = 0, dv = 4, block = "base:stone" },
+]
+
+[[piece]]
+id = "gallery_hoard"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "tunnel", facing = "west" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 1, loot = "belt_quest:brood_hoard" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 3, kind = "spawn:nest:belt_quest:brood_den" },
+  { du = 5, dy = 1, dv = 4, kind = "spawn:nest:belt_quest:spider_burrow" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:mossy_cobblestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:stone" },
+  { du = 2, dy = 0, dv = 1, block = "base:stone" },
+  { du = 3, dy = 0, dv = 1, block = "base:stone" },
+  { du = 4, dy = 0, dv = 1, block = "base:stone" },
+  { du = 5, dy = 0, dv = 1, block = "base:mossy_cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:mossy_cobblestone" },
+  { du = 5, dy = 0, dv = 2, block = "base:mossy_cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:mossy_cobblestone" },
+  { du = 5, dy = 0, dv = 3, block = "base:mossy_cobblestone" },
+  { du = 0, dy = 0, dv = 4, block = "base:mossy_cobblestone" },
+  { du = 1, dy = 0, dv = 4, block = "base:stone" },
+  { du = 2, dy = 0, dv = 4, block = "base:stone" },
+  { du = 3, dy = 0, dv = 4, block = "base:stone" },
+  { du = 4, dy = 0, dv = 4, block = "base:stone" },
+  { du = 5, dy = 0, dv = 4, block = "base:mossy_cobblestone" },
+  { du = 5, dy = 1, dv = 3, block = "belt_quest:way_out" },
+]
+
+[[pool]]
+id = "gallery"
+entries = [
+  { piece = "gallery_run", weight = 3 },
+  { piece = "gallery_hoard", weight = 1 },
+]
+
+[[assembly]]
+id = "brood_gallery"
+biomes = ["plains"]
+rarity = 1
+entry = "gallery_gate"
+pools = { tunnel = "gallery" }
+max_depth = 3
+max_pieces = 6
+terrain = "none"
+
+[assembly.dungeon]
+reset = 900.0

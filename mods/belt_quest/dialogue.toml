@@ -1,0 +1,118 @@
+# Haven's voices (belts 07-quests-and-narrative): gruff-but-warm frontier
+# pragmatism. Choices run callbacks (script fns) that accept quests and
+# hand out gear; conditions gate topics on quest flags.
+
+[[dialogue]]
+id = "marek"
+root = "welcome"
+
+[[dialogue.nodes]]
+id = "welcome"
+text = "Welcome to Haven, newcomer. We're glad to have another pair of hands around here."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "What needs doing?"
+callback = "belt_quest:accept_settling_in"
+next = "settling"
+
+[[dialogue.nodes.choices]]
+label = "Goodbye"
+next = ""
+
+[[dialogue.nodes]]
+id = "settling"
+text = "Meet the others first. Ava runs the stall, Sal the workshop, Jonas walks the wall. The board outside keeps us honest — read it, then find me again."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "On my way."
+next = ""
+
+[[dialogue.nodes]]
+id = "herbs_ask"
+text = "Sal burns through bandages faster than we grow them. Meadow's west, past the fence line — five handfuls of the blue-flowered herb should do."
+condition = "belt_quest:herbs_available"
+[[dialogue.nodes.choices]]
+label = "I'll gather them."
+callback = "belt_quest:accept_first_errand"
+next = ""
+
+# ---- Sal: the factory spark ----
+
+[[dialogue]]
+id = "sal"
+root = "welcome"
+
+[[dialogue.nodes]]
+id = "welcome"
+text = "You're the newcomer Marek took in? Good. This settlement runs on machines nobody maintains. Interested?"
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Teach me."
+callback = "belt_quest:accept_the_spark"
+next = "spark"
+
+[[dialogue.nodes.choices]]
+label = "Later."
+next = ""
+
+[[dialogue.nodes]]
+id = "spark"
+text = "A smelter is four firebrick and a stubborn streak. I've left materials by the workshop door — place it, feed it ore and charcoal, and bring me one iron ingot. Then we talk about real work."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Consider it done."
+next = ""
+
+# ---- Ava: trade and rumor ----
+
+[[dialogue]]
+id = "ava"
+root = "welcome"
+
+[[dialogue.nodes]]
+id = "welcome"
+text = "Fresh faces are good for business. Ore in, tools out — the stall's open, prices are fair-ish, and no, they don't get fairer."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Any rumors?"
+next = "rumor"
+
+[[dialogue.nodes.choices]]
+label = "Goodbye."
+next = ""
+
+[[dialogue.nodes]]
+id = "rumor"
+text = "Wolves got bold since the mines went quiet. Jonas pays for their pelts — and Sal swears the hill hums at night. I sell goods, not explanations."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Noted."
+next = ""
+
+# ---- Jonas: first threat ----
+
+[[dialogue]]
+id = "jonas"
+root = "welcome"
+
+[[dialogue.nodes]]
+id = "welcome"
+text = "Stay inside the fence after dark, newcomer. Wolves have been testing the wall all week."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Give me a reason to fight back."
+callback = "belt_quest:greet_first_threat"
+next = "threat"
+
+[[dialogue.nodes.choices]]
+label = "Understood."
+next = ""
+
+[[dialogue.nodes]]
+id = "threat"
+text = "Here — an iron blade, Haven's make. Take three wolves with it and I'll believe you're not another mouth to feed. They hunt the west meadow at dusk."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Three wolves it is."
+callback = "belt_quest:accept_first_threat"
+next = ""

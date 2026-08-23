@@ -1,0 +1,58 @@
+# Haven's first arc (belts 07 + 13): settle in, errand, factory spark,
+# first blood. Rewards follow the authored credits/XP where the engine
+# has a channel (items, XP via skill sources, KV flags); credit amounts
+# land as old_coins until C7's economy lands.
+
+[[quest]]
+id = "settling_in"
+title = "Settling In"
+description = "Meet Ava at the stall, Sal at the workshop, and Jonas on the wall. Then read the quest board."
+giver = "elder_marek"
+objectives = [
+  { key = "met_ava", description = "Talk to Ava", count = 1 },
+  { key = "met_sal", description = "Talk to Sal", count = 1 },
+  { key = "met_jonas", description = "Talk to Jonas", count = 1 },
+]
+rewards = [
+  { item = "base:old_coin", count = 25 },
+]
+
+[[quest]]
+id = "first_errand"
+title = "First Errand"
+description = "Gather five handfuls of medicinal herbs from the west meadow for Marek."
+giver = "elder_marek"
+prereq = "settling_in"
+objectives = [
+  { key = "herbs", description = "Gather medicinal herbs", count = 5 },
+]
+rewards = [
+  { item = "base:old_coin", count = 50 },
+  { item = "base:iron_pickaxe", count = 1 },
+]
+
+[[quest]]
+id = "the_spark"
+title = "The Spark"
+description = "Sal left smelter materials by the workshop. Place the smelter, feed it, and bring him an iron ingot."
+giver = "tinkerer_sal"
+objectives = [
+  { key = "ingot", description = "Smelt an iron ingot", count = 1 },
+]
+rewards = [
+  { item = "base:old_coin", count = 50 },
+  { item = "belt_quest:health_stim", count = 2 },
+]
+
+[[quest]]
+id = "first_threat"
+title = "First Threat"
+description = "Jonas lent you an iron blade. Take three wolves in the west meadow."
+giver = "guard_jonas"
+objectives = [
+  { key = "wolves", description = "Kill wolves", count = 3 },
+]
+rewards = [
+  { item = "base:old_coin", count = 75 },
+  { item = "belt_quest:light_melee_frame", count = 1 },
+]

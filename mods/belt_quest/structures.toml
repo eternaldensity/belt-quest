@@ -1,0 +1,21 @@
+# Loot tables for the Brood Gallery (belts 04-dungeons): guaranteed-feel
+# material caches, not lottery drops. Boss hoard carries the components
+# that complete the harness.
+
+[[loot]]
+id = "gallery_cache"
+entries = [
+  { item = "base:coal", weight = 3, count = [2, 5] },
+  { item = "base:raw_iron", weight = 3, count = [1, 4] },
+  { item = "base:raw_copper", weight = 2, count = [1, 4] },
+  { item = "quest_herbs", weight = 2, count = [1, 2] },
+  { item = "raw_chitin", weight = 1, count = [1, 2] },
+]
+
+[[loot]]
+id = "brood_hoard"
+entries = [
+  { item = "raw_chitin", weight = 3, count = [3, 6] },
+  { item = "venom_sac", weight = 2, count = [1, 2] },
+  { item = "base:old_coin", weight = 2, count = [10, 25] },
+]

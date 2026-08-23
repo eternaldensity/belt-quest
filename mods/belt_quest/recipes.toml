@@ -1,0 +1,121 @@
+# belt-quest recipes. Free-grid recipes build the factory and the gear;
+# `[[smelt]]` rows feed any forge (including the Smelter); `station`
+# recipes exist only at the Assembler — the factory IS the crafting system.
+
+# ---- smelting (Smelter / forge handler) ----
+
+[[smelt]]
+input = "base:raw_iron"
+output = "base:iron_ingot"
+time = 8.0
+
+# ---- the factory raises itself ----
+
+[[recipe]]
+pattern = ["ff", "ff"]
+keys = { f = "base:firebrick" }
+output = "belt_quest:smelter"
+
+[[recipe]]
+pattern = ["pgp", "gg ", "pgp"]
+keys = { p = "base:plate", g = "base:iron_gear" }
+output = "belt_quest:assembler"
+
+# ---- Haven's doors below ----
+
+[[recipe]]
+pattern = ["ss", "ss"]
+keys = { s = "base:limestone_bricks" }
+output = "belt_quest:deep_door"
+
+[[recipe]]
+pattern = ["cc"]
+keys = { c = "base:cobblestone" }
+output = "belt_quest:wayshrine"
+
+# ---- modular gear, free grid (capability E6) ----
+
+[[recipe]]
+pattern = ["ll", "ll"]
+keys = { l = "base:leather" }
+output = "belt_quest:light_harness"
+
+[[recipe]]
+pattern = [" w ", " wi", " iw"]
+keys = { i = "base:iron_ingot", w = "base:plant_fiber" }
+output = "belt_quest:light_melee_frame"
+
+[[recipe]]
+pattern = ["ii", "ii"]
+keys = { i = "base:iron_ingot" }
+output = "belt_quest:iron_blade"
+
+[[recipe]]
+pattern = ["ff"]
+keys = { f = "base:plant_fiber" }
+output = "belt_quest:wood_grip"
+
+# ---- assembler station recipes (capability E7) ----
+# Only craftable at the Assembler screen.
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["c"]
+keys = { c = "base:copper_ingot" }
+output = "belt_quest:copper_wire"
+count = 2
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["pcw"]
+keys = { p = "base:plate", c = "belt_quest:copper_wire", w = "belt_quest:copper_wire" }
+output = "belt_quest:circuit"
+count = 2
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["hh", " c"]
+keys = { h = "belt_quest:quest_herbs", c = "base:coal" }
+output = "belt_quest:health_stim"
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["iii"]
+keys = { i = "base:iron_ingot" }
+output = "belt_quest:iron_plate_component"
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["sss"]
+keys = { s = "base:steel_ingot" }
+output = "belt_quest:steel_blade"
+
+# The Brood Mother's due: her drops complete the harness.
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["cc", "cc"]
+keys = { c = "belt_quest:raw_chitin" }
+output = "belt_quest:chitin_carapace"
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["pp", " gg"]
+keys = { p = "base:plate", g = "base:screw" }
+output = "belt_quest:machine_frame"
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["bh"]
+keys = { b = "base:bread", h = "belt_quest:quest_herbs" }
+output = "belt_quest:steel_ration_bar"
+
+[[recipe]]
+pattern = ["ll"]
+keys = { l = "base:leather_strip" }
+output = "belt_quest:cloth_lining"
+
+[[recipe]]
+station = "belt_quest:assembler"
+pattern = ["vgc"]
+keys = { v = "venom_sac", g = "base:glass_bottle", c = "raw_chitin" }
+output = "belt_quest:venom_injector"

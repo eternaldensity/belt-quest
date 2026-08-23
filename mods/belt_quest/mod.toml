@@ -1,12 +1,13 @@
-# belt-quest mod skeleton
+# belt-quest — a factory-RPG for WildForge.
 #
-# Content files are added as their upstream WildForge capabilities land
-# (see docs/port-plan.md Milestone A). This file exists so the mod has an
-# identity in WildForge's mod loader from day one.
+# Pure data + script mod (docs/port-plan.md decision 1). The factory is
+# the crafting system, the settlement network is the quest infrastructure,
+# and dungeons are destination content that hands materials back to the
+# factory. Milestone B vertical slice: Haven, the first factory, modular
+# gear, the Brood Gallery, and the first quest arc.
 
 id = "belt_quest"
 name = "belt-quest"
 version = "0.1.0"
 world_api = 2
-# Depends on the belt-quest capabilities being present in the engine; the
-# mod is inert (loads nothing) until then.
+depends = ["base"]

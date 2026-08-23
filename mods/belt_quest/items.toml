@@ -1,0 +1,178 @@
+# belt-quest items. Base's iron/copper/coal/stone chain is reused as-is;
+# this file adds the factory intermediates the RPG side consumes, the
+# consumables, and (further down) the modular gear frames and components.
+
+# ---- factory intermediates (belts 10-factory-rpg-integration) ----
+
+[[item]]
+id = "copper_wire"
+name = "Copper Wire"
+texture = "@leather_strip"
+material_class = "geologically_finite"
+materials = { copper = 600 }
+
+[[item]]
+id = "circuit"
+name = "Circuit"
+texture = "@crystal_prism"
+material_class = "transformative_finite"
+materials = { iron = 1200, copper = 1800 }
+
+[[item]]
+id = "machine_frame"
+name = "Machine Frame"
+texture = "@iron_shaft"
+material_class = "geologically_finite"
+materials = { iron = 4800 }
+
+# ---- consumables: the factory feeds the delver ----
+
+[[item]]
+id = "quest_herbs"
+name = "Medicinal Herbs"
+texture = "@cairnbloom_flower"
+material_class = "renewable"
+materials = { wood = 60 }
+
+[[item]]
+id = "health_stim"
+name = "Health Stim"
+texture = "@hearth_tonic"
+material_class = "transformative_finite"
+materials = { wood = 120, coal = 300 }
+food = { hunger = 4, nutrition = { health = 8 } }
+
+[[item]]
+id = "steel_ration_bar"
+name = "Ration Bar"
+texture = "@bread"
+material_class = "renewable"
+materials = { wood = 90 }
+food = { hunger = 3, nutrition = { health = 6 } }
+
+# ---- modular equipment, frames (belts 02-modular-equipment) ----
+# Frames take typed component slots; components slot in and out INTACT and
+# their stats ride the worn loadout only while the frame is worn + intact.
+# A frame at 0 durability disables instead of breaking.
+
+[[item]]
+id = "light_harness"
+name = "Light Harness"
+texture = "@leather_chestplate"
+durability = 80
+armor = { slot = "chest", points = 2 }
+frame = { slots = [ { type = "plate", max = 1 }, { type = "lining", max = 1 } ] }
+materials = { leather = 3600, iron = 1200 }
+[[item.stats]]
+kind = "carry"
+flat = 24
+
+[[item]]
+id = "light_melee_frame"
+name = "Light Melee Frame"
+texture = "@iron_sword"
+durability = 120
+damage = 6
+damage_type = "slash"
+frame = { slots = [ { type = "blade", max = 1 }, { type = "grip", max = 1 } ] }
+materials = { wood = 600, iron = 2400 }
+
+# ---- modular equipment, components ----
+
+[[item]]
+id = "iron_blade"
+name = "Iron Blade"
+texture = "@copper_sword"
+component = "blade"
+durability = 100
+damage = 3
+damage_type = "slash"
+materials = { iron = 2400 }
+[[item.stats]]
+kind = "health"
+flat = 2
+
+[[item]]
+id = "steel_blade"
+name = "Steel Blade"
+texture = "@iron_sword"
+component = "blade"
+durability = 160
+damage = 5
+damage_type = "slash"
+materials = { steel = 2400 }
+[[item.stats]]
+kind = "health"
+flat = 4
+
+[[item]]
+id = "wood_grip"
+name = "Wood Grip"
+texture = "@plant_fiber"
+component = "grip"
+materials = { wood = 900 }
+[[item.stats]]
+kind = "stamina_regen"
+mult_permille = 1100
+
+[[item]]
+id = "iron_plate_component"
+name = "Iron Plate Armor"
+texture = "@iron_chestplate"
+component = "plate"
+durability = 90
+materials = { iron = 2400 }
+[[item.stats]]
+kind = "health"
+flat = 4
+
+[[item]]
+id = "chitin_carapace"
+name = "Chitin Carapace"
+texture = "@scar_fragment"
+component = "plate"
+durability = 140
+materials = { chitin = 2400 }
+[[item.stats]]
+kind = "health"
+flat = 8
+
+[[item]]
+id = "cloth_lining"
+name = "Cloth Lining"
+texture = "@filter_cloth"
+component = "lining"
+materials = { leather = 900 }
+[[item.stats]]
+kind = "move_speed"
+mult_permille = 1050
+
+[[item]]
+id = "venom_injector"
+name = "Venom Injector"
+texture = "@glass_bottle"
+component = "grip"
+durability = 60
+damage = 2
+damage_type = "fire"
+materials = { glass = 600, venom = 900 }
+[[item.stats]]
+kind = "move_speed"
+mult_permille = 1080
+
+
+# ---- dungeon materials (the Brood Gallery pays the factory) ----
+
+[[item]]
+id = "raw_chitin"
+name = "Raw Chitin"
+texture = "@scar_fragment"
+material_class = "renewable"
+materials = { chitin = 600 }
+
+[[item]]
+id = "venom_sac"
+name = "Venom Sac"
+texture = "@glass_bottle"
+material_class = "transformative_finite"
+materials = { venom = 900 }

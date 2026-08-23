@@ -1,0 +1,16 @@
+# The belt-quest ruleset (port-plan 4.2): food is buffs, not a survival
+# meter; the wild's hearts/offerings loop is off; hostile ring spawns are
+# off because belt-quest's enemies arrive through nests; skills and
+# modular equipment are on. Factory output feeds regional ire (E12), so
+# industry has a moral weight here that extraction alone never carried.
+
+[[mode]]
+id = "belt_quest"
+base = "survival"
+hunger = false
+hearts = false
+hostile_spawns = false
+pvp = false
+skills = true
+equipment = true
+industrial_ire = true

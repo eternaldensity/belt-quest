@@ -1,0 +1,77 @@
+# belt-quest blocks. Factory buildings are machine mouths (capability E7);
+# the Deep doors and shrine are capability E10 blocks; the quest board is a
+# capability E11 screen block. Textures alias base tiles — no binary art in
+# the vertical slice.
+
+[[block]]
+id = "smelter"
+name = "Smelter"
+texture = { top = "@stone", side = "@firebrick" }
+hardness = 4.0
+tool = "pickaxe"
+requires_tool = true
+interaction = "belt_quest:smelter"
+
+[[block]]
+id = "smelter_lit"
+name = "Smelter (lit)"
+texture = { top = "@forge_lit", side = "@firebrick" }
+hardness = 4.0
+tool = "pickaxe"
+requires_tool = true
+light = 10
+light_color = [1.0, 0.55, 0.2]
+
+[[block]]
+id = "assembler"
+name = "Assembler"
+texture = { top = "@iron_block", side = "@cracked_masonry" }
+hardness = 4.0
+tool = "pickaxe"
+requires_tool = true
+interaction = "belt_quest:assembler"
+
+# The cave mouth into the Brood Gallery (capability E10).
+[[block]]
+id = "deep_door"
+name = "Deep Door"
+texture = "@steel_block"
+hardness = 6.0
+tool = "pickaxe"
+requires_tool = true
+interaction = "dungeon_entry:belt_quest:brood_gallery"
+
+# The way back out of a run.
+[[block]]
+id = "way_out"
+name = "Way Out"
+texture = "@glass"
+hardness = 1.0
+interaction = "dungeon_exit"
+
+# A run checkpoint (party-shared respawn, belongings kept on death).
+[[block]]
+id = "wayshrine"
+name = "Wayshrine"
+texture = "@amber_glass"
+hardness = 2.0
+light = 8
+light_color = [0.6, 0.9, 1.0]
+interaction = "dungeon_checkpoint"
+
+# Haven's quest board (capability E11).
+[[block]]
+id = "quest_board"
+name = "Quest Board"
+texture = { top = "@planks", side = "@planks" }
+hardness = 1.5
+tool = "axe"
+interaction = "screen:belt_quest:board"
+
+# A cave-spider burrow: the nest block whose presence spawns spiders near
+# it; breaking it stops the respawns (capability E9).
+[[block]]
+id = "spider_burrow"
+name = "Spider Burrow"
+texture = "@gravel"
+hardness = 2.0

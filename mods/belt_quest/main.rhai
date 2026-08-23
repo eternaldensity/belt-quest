@@ -1,0 +1,54 @@
+// belt-quest slice script: quest-board flavor, kill tracking for First
+// Threat, and the dialogue callbacks the Haven voices dispatch.
+
+fn on_screen_click(screen, action) {
+    if screen == "belt_quest:board" && action == "pin_notice" {
+        hud_message("Marek will want to hear that idea. Find him at the hall.");
+    }
+}
+
+// First Threat: Jonas counts wolves. Base's wolf is `base:wolf`.
+fn on_animal_killed(name, face, u, y, v) {
+    if name == "base:wolf" {
+        quest_progress("first_threat", "wolves", 1);
+    }
+    if name == "belt_quest:cave_spider" {
+        quest_progress("brood_gallery_cull", "spiders", 1);
+    }
+}
+
+// ---- dialogue callbacks (condition/callback fns) ----
+
+fn accept_settling_in() {
+    quest_accept("settling_in");
+    hud_message("Quest accepted: Settling In.");
+}
+
+fn herbs_available() -> bool {
+    storage_get("quest_first_errand") != "done"
+}
+
+fn accept_first_errand() {
+    quest_accept("first_errand");
+    hud_message("Five blue-flowered herbs, west meadow.");
+}
+
+fn accept_the_spark() {
+    quest_accept("the_spark");
+    give("base:firebrick", 8);
+    give("base:raw_iron", 4);
+    give("base:coal", 4);
+    hud_message("Sal hands you firebrick, ore, and coal.");
+}
+
+fn greet_first_threat() {
+    // The blade arrives once; the offer never re-gifts.
+    if storage_get("jonas_blade") != "given" {
+        give("belt_quest:light_melee_frame", 1);
+        storage_set("jonas_blade", "given");
+    }
+}
+
+fn accept_first_threat() {
+    quest_accept("first_threat");
+}
