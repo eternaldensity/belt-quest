@@ -272,6 +272,18 @@ loop and proves the factory↔RPG fusion end to end.
 > deliver, staging counts against appetite, reputation pays through the
 > player-KV channel (guests via S2C::SettlementDelivery). PROTOCOL 46.
 >
+> **C7 economy depth LANDED.**
+> - **Barter counters**: stall counters authored into Haven's market and
+>   Saltmarsh's yard — claim one, stock goods, set a barter price, and
+>   the till fills (engine stalls are barter-native: any stack is a
+>   legal price).
+> - **Settlement orders**: production contracts per outpost — Haven
+>   orders plates, Emberwatch orders machine frames, Saltmarsh orders
+>   copper wire — progressed by the on_craft hook, paid in credits and
+>   standing.
+> - Credits remain old_coin (real texture, real flows); market pricing
+>   hooks stay a future engine item once stalls gain dynamic pricing.
+>
 > **C4 world depth: wave one LANDED.**
 > - **Haven growth tiers**: watchtower (rep 100) and granary (rep 300)
 >   authored as settlement-tier pieces — placed at worldgen, hidden
