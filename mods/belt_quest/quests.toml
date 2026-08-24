@@ -70,3 +70,31 @@ objectives = [
 rewards = [
   { set_flag = "mines_conduits", flag_value = "true" },
 ]
+
+# ---- C8: first contact ----
+
+[[quest]]
+id = "strange_signals"
+title = "Strange Signals"
+description = "Sal swears the hill hums on a schedule now. Take her readings up there and see what hums back."
+giver = "tinkerer_sal"
+prereq = "the_spark"
+objectives = [
+  { key = "readings", description = "Record the hill-top signal", count = 1 },
+]
+rewards = [
+  { item = "base:old_coin", count = 100 },
+]
+
+[[quest]]
+id = "into_the_deep"
+title = "Into the Deep"
+description = "The ruins west of Haven opened overnight. Sal wants one of their components; Jonas wants to know what else is in there."
+giver = "tinkerer_sal"
+prereq = "strange_signals"
+objectives = [
+  { key = "component", description = "Recover an alien component", count = 1 },
+]
+rewards = [
+  { item = "base:old_coin", count = 150 },
+]

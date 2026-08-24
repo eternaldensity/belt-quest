@@ -5,6 +5,17 @@ fn on_screen_click(screen, action) {
     if screen == "belt_quest:board" && action == "pin_notice" {
         hud_message("Marek will want to hear that idea. Find him at the hall.");
     }
+    if screen == "belt_quest:archive_terminal" && action == "request_directive" {
+        let rep = storage_get("custodian_rep");
+        let n = if rep == "" { 0 } else { rep.parse_int() };
+        if n >= 300 {
+            hud_message("'Cooperative threshold met. The deepest stacks open for you.'");
+        } else if n <= -300 {
+            hud_message("'Hostility archived. The deepest stacks close for you.'");
+        } else {
+            hud_message("'Assessment ongoing. Maintain, wait, teach those who ask.'");
+        }
+    }
     if screen == "belt_quest:conduits" && action.starts_with("valve_") {
         on_screen_click_valve(action.substr(6));
     }
@@ -78,5 +89,37 @@ fn on_screen_click_valve(order) {
         play_sound("craft");
     } else {
         hud_message("The hub clicks. Another valve hums awake.");
+    }
+}
+
+// ---- C8: first contact ----
+
+fn custodian_cooperative() {
+    let rep = storage_get("custodian_rep");
+    let base = if rep == "" { 0 } else { rep.parse_int() };
+    storage_set("custodian_rep", (base + 50).to_string());
+    hud_message("The Custodian logs: provisional cooperative intent.");
+}
+
+fn custodian_hostile() {
+    let rep = storage_get("custodian_rep");
+    let base = if rep == "" { 0 } else { rep.parse_int() };
+    storage_set("custodian_rep", (base - 50).to_string());
+    hud_message("The Custodian logs: provisional hostile intent.");
+}
+
+fn strange_signals_done() {
+    storage_get("quest_strange_signals") == "done"
+}
+
+fn accept_into_the_deep() {
+    quest_accept("into_the_deep");
+}
+
+// Archive data slates feed the Custodian relationship when delivered by
+// hand to any depot bound to the archive facility.
+fn on_enemy_destroyed(name, face, u, y, v) {
+    if name == "belt_quest:archive_warden" {
+        quest_progress("the_archive_open", "warden", 1);
     }
 }

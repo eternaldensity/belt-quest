@@ -152,3 +152,25 @@ station = "belt_quest:assembler"
 pattern = ["ppp", "pcp", "iii"]
 keys = { p = "base:plate", c = "belt_quest:circuit", i = "base:iron_ingot" }
 output = "belt_quest:scrap_rig"
+
+# ---- C8: the alien fabricator (Shaper fabrication templates) ----
+
+[[recipe]]
+station = "belt_quest:alien_fabricator"
+pattern = ["aac", "aca", "caa"]
+keys = { a = "alien_alloy", c = "energy_crystal" }
+output = "belt_quest:alien_exoframe"
+
+[[recipe]]
+station = "belt_quest:alien_fabricator"
+pattern = ["aa", "ee"]
+keys = { a = "alien_alloy", e = "energy_crystal" }
+output = "belt_quest:alien_component"
+
+# The Archive Gate: the decoder's work. Built at the alien fabricator from
+# components gathered across the ruins.
+[[recipe]]
+station = "belt_quest:alien_fabricator"
+pattern = ["cac", "aea", "cac"]
+keys = { c = "alien_component", a = "alien_alloy", e = "energy_crystal" }
+output = "belt_quest:archive_entry"

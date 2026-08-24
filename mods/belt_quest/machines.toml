@@ -29,3 +29,15 @@ fuel_slots = 0
 items_per_fuel = 1
 min_charge = 0
 min_fuel = 0
+
+[[machine]]
+id = "alien_fabricator"
+label = "Alien Fabricator"
+handler = "workbench"
+mouth = "belt_quest:alien_fabricator"
+fire_secs = 0.0
+charge_slots = 0
+fuel_slots = 0
+items_per_fuel = 1
+min_charge = 0
+min_fuel = 0

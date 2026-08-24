@@ -39,3 +39,15 @@ talk_radius = 3.5
 sound_pitch = 0.9
 patrol = [[0.0, 0.0, 0.0], [2.0, 0.0, 0.0], [2.0, 0.0, -1.0]]
 pause = 3.0
+
+# The Custodian: the maintenance intelligence that answers the decoder.
+# Not hostile — confused. It was waiting for the Shapers.
+
+[[npc]]
+id = "custodian"
+name = "Custodian"
+tex = "@blue_glass"
+dialogue = "custodian"
+talk_radius = 3.0
+sound_pitch = 1.6
+pause = 5.0

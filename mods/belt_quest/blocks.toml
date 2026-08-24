@@ -125,3 +125,48 @@ texture = { top = "@blue_glass", side = "@steel_block" }
 hardness = 3.0
 tool = "pickaxe"
 interaction = "depot:belt_quest:haven"
+
+# ---- C8: Shaper architecture ----
+
+[[block]]
+id = "shaper_stone"
+name = "Shaper Stone"
+texture = "@packed_earth"
+hardness = 8.0
+tool = "pickaxe"
+requires_tool = true
+
+[[block]]
+id = "shaper_light"
+name = "Shaper Light Panel"
+texture = "@teal_glass"
+hardness = 2.0
+light = 12
+light_color = [0.4, 1.0, 0.9]
+
+[[block]]
+id = "alien_fabricator"
+name = "Alien Fabricator"
+texture = { top = "@amber_glass", side = "@iron_block" }
+hardness = 5.0
+tool = "pickaxe"
+requires_tool = true
+interaction = "belt_quest:alien_fabricator"
+
+[[block]]
+id = "ruins_entry"
+name = "Ruins Doorway"
+texture = "@blue_glass"
+hardness = 6.0
+tool = "pickaxe"
+requires_tool = true
+interaction = "dungeon_entry:belt_quest:alien_ruins"
+
+[[block]]
+id = "archive_entry"
+name = "Archive Gate"
+texture = "@violet_glass"
+hardness = 8.0
+tool = "pickaxe"
+requires_tool = true
+interaction = "dungeon_entry:belt_quest:the_archive"

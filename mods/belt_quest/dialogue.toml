@@ -116,3 +116,59 @@ condition = ""
 label = "Three wolves it is."
 callback = "belt_quest:accept_first_threat"
 next = ""
+
+[[dialogue]]
+id = "custodian"
+root = "contact"
+
+[[dialogue.nodes]]
+id = "contact"
+text = "...query. You are not Shaper. You are small, and wet, and you carry my maker's keys. State intent."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "We come to learn."
+callback = "belt_quest:custodian_cooperative"
+next = "learn"
+
+[[dialogue.nodes.choices]]
+label = "We come to take."
+callback = "belt_quest:custodian_hostile"
+next = "take"
+
+[[dialogue.nodes]]
+id = "learn"
+text = "Learn. Acceptable provisional intent. The makers learned, then they became light. My standing order: maintain, wait, teach those who ask. Deliver alien alloy to any depot bound to this facility and I will log your usefulness."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "What do you maintain?"
+next = "maintain"
+
+[[dialogue.nodes.choices]]
+label = "I'll return with alloy."
+next = ""
+
+[[dialogue.nodes]]
+id = "maintain"
+text = "Everything you breathe on. The caves were ours. The ore veins where we wanted them. The wolves are a rounding error. Maintenance continues."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Understood."
+next = ""
+
+[[dialogue.nodes]]
+id = "take"
+text = "Noted. The archive remembers every key it has ever cut. Yours will open fewer doors until my assessment improves."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "We'll see."
+next = ""
+
+# Sal reacts to the activation.
+[[dialogue.nodes]]
+id = "signals_done"
+text = "The readings came from UNDER everything. I charted a door in the ruins west — it opened for nobody until now. Take this: the hill wants to be read."
+condition = "belt_quest:strange_signals_done"
+[[dialogue.nodes.choices]]
+label = "I'm on it."
+callback = "belt_quest:accept_into_the_deep"
+next = ""

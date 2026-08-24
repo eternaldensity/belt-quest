@@ -57,3 +57,24 @@ action = "valve_c"
 [[screen.button]]
 label = "Press the humming valve"
 action = "valve_d"
+
+# The Archive terminal (capability E11): standing + lore readout.
+
+[[screen]]
+id = "archive_terminal"
+title = "Archive Terminal"
+
+[[screen.label]]
+text = "TRANSLATION LAYER 1 OF 9 SYNCHRONIZED."
+
+[[screen.kv_label]]
+key = "custodian_rep"
+prefix = "Custodian assessment: "
+
+[[screen.kv_label]]
+key = "quest_into_the_deep"
+prefix = "Directive: "
+
+[[screen.button]]
+label = "Request maintenance directive"
+action = "request_directive"

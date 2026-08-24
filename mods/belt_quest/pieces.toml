@@ -495,3 +495,133 @@ terrain = "none"
 
 [assembly.dungeon]
 reset = 600.0
+
+# ---------------- the Alien Ruins (C8) ----------------
+# Geometric, lit from within, garrisoned.
+
+[[piece]]
+id = "ruins_gate"
+connectors = [
+  { du = 5, dy = 0, dv = 3, kind = "conduit", facing = "east" },
+]
+markers = [
+  { du = 1, dy = 1, dv = 5, kind = "spawn:nest:belt_quest:ruins_garrison" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 1, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 3, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 4, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 5, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 2, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 1, dv = 2, block = "belt_quest:shaper_light" },
+  { du = 5, dy = 0, dv = 2, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 3, block = "belt_quest:shaper_stone" },
+  { du = 5, dy = 0, dv = 3, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 1, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 3, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 4, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 5, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 1, dv = 5, block = "belt_quest:wayshrine" },
+]
+
+[[piece]]
+id = "ruins_hall"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "conduit", facing = "west" },
+  { du = 6, dy = 0, dv = 2, kind = "conduit", facing = "east" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 0, loot = "belt_quest:ruins_cache" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 4, kind = "spawn:nest:belt_quest:ruins_garrison" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 1, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 0, dv = 1, block = "belt_quest:shaper_light" },
+  { du = 3, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 4, dy = 0, dv = 1, block = "belt_quest:shaper_light" },
+  { du = 5, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 6, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 2, block = "belt_quest:shaper_stone" },
+  { du = 6, dy = 0, dv = 2, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 3, block = "belt_quest:shaper_stone" },
+  { du = 6, dy = 0, dv = 3, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 1, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 3, dy = 0, dv = 4, block = "belt_quest:shaper_light" },
+  { du = 4, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 5, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 6, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+]
+
+[[piece]]
+id = "archive_vestibule"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "conduit", facing = "west" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 0, loot = "belt_quest:archive_hoard" },
+]
+markers = [
+  { du = 3, dy = 1, dv = 2, kind = "spawn:nest:belt_quest:archive_core" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 1, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 3, dy = 0, dv = 1, block = "belt_quest:shaper_light" },
+  { du = 4, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 5, dy = 0, dv = 1, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 2, block = "belt_quest:shaper_stone" },
+  { du = 5, dy = 0, dv = 2, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 3, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 1, dv = 3, block = "belt_quest:way_out" },
+  { du = 5, dy = 0, dv = 3, block = "belt_quest:shaper_stone" },
+  { du = 0, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 1, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 3, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 4, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+  { du = 5, dy = 0, dv = 4, block = "belt_quest:shaper_stone" },
+]
+
+[[pool]]
+id = "ruins"
+entries = [
+  { piece = "ruins_hall", weight = 3 },
+  { piece = "archive_vestibule", weight = 1 },
+]
+
+[[assembly]]
+id = "alien_ruins"
+biomes = ["plains"]
+rarity = 1
+entry = "ruins_gate"
+pools = { conduit = "ruins" }
+max_depth = 4
+max_pieces = 6
+terrain = "none"
+
+[assembly.dungeon]
+reset = 1500.0
+
+# The Archive itself: short but mean — straight to the Warden.
+[[assembly]]
+id = "the_archive"
+biomes = ["plains"]
+rarity = 1
+entry = "archive_vestibule"
+pools = {}
+max_depth = 1
+max_pieces = 1
+terrain = "none"
+
+[assembly.dungeon]
+reset = 2400.0

@@ -234,3 +234,83 @@ drops = [
 body = { size = [11, 14, 10], at = [0, 6, 0] }
 head = { size = [7, 7, 7], at = [0, 12, -6] }
 leg = { size = [3, 6, 3], at = [4, 0, 3] }
+
+# ---- C8: Custodian constructs (belts 09-alien-arc) ----
+# The maintenance crew never stopped working. Constructs resist what the
+# frontier swings and hate what the forge makes.
+
+[[animal]]
+id = "custodian_sentinel"
+name = "Custodian Sentinel"
+hostile = true
+biomes = ["plains"]
+health = 90
+speed = 3.2
+attack = 6
+tex = "@iron_block"
+sound_pitch = 0.8
+aggro_range = 15
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "shield_bearer"
+shield = { front_mult = 0.4, front_deg = 100 }
+hack = {
+  tool = "hack",
+  drops = [
+    { item = "alien_alloy", min = 1, max = 2 },
+    { item = "energy_crystal", min = 1, max = 1 },
+  ],
+}
+resist = [
+  { type = "pierce", mult = 0.5 },
+  { type = "slash", mult = 0.5 },
+  { type = "fire", mult = 0.75 },
+  { type = "blunt", mult = 1.5 },
+]
+attacks = [
+  { name = "beam_lash", kind = "melee", damage = 6, cooldown = 1.5, damage_type = "fire" },
+]
+drops = [
+  { item = "alien_alloy", min = 1, max = 3 },
+  { item = "energy_crystal", min = 0, max = 2 },
+]
+[animal.model]
+body = { size = [7, 10, 7], at = [0, 3, 0] }
+head = { size = [5, 4, 5], at = [0, 9, -4] }
+leg = { size = [2, 3, 2], at = [2, 0, 2] }
+
+[[animal]]
+id = "archive_warden"
+name = "Archive Warden"
+hostile = true
+biomes = ["plains"]
+health = 220
+speed = 2.8
+attack = 9
+tex = "@blue_glass"
+sound_pitch = 0.35
+aggro_range = 18
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "controller"
+controller = { spawn = "belt_quest:custodian_sentinel", count = 2, interval = 16.0, max = 2 }
+resist = [
+  { type = "pierce", mult = 0.6 },
+  { type = "slash", mult = 0.6 },
+  { type = "fire", mult = 0.5 },
+]
+attacks = [
+  { name = "suppression_beam", kind = "melee", damage = 10, cooldown = 2.0, damage_type = "fire" },
+  { name = "sweep", kind = "charge", damage = 13, cooldown = 9.0, range = 14, damage_type = "blunt" },
+]
+drops = [
+  { item = "alien_alloy", min = 4, max = 6 },
+  { item = "energy_crystal", min = 2, max = 4 },
+  { item = "archive_data", min = 1, max = 2 },
+]
+[animal.model]
+body = { size = [10, 16, 10], at = [0, 5, 0] }
+head = { size = [7, 6, 7], at = [0, 13, -6] }
+leg = { size = [3, 5, 3], at = [3, 0, 3] }

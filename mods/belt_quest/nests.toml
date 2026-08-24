@@ -70,3 +70,21 @@ species = "belt_quest:the_foreman"
 radius = 22.0
 interval = 6.0
 cap = 1
+
+# Shaper sites keep their own garrisons.
+
+[[nest]]
+id = "ruins_garrison"
+block = "belt_quest:shaper_stone"
+species = "belt_quest:custodian_sentinel"
+radius = 18.0
+interval = 20.0
+cap = 2
+
+[[nest]]
+id = "archive_core"
+block = "belt_quest:brood_egg_cluster"
+species = "belt_quest:archive_warden"
+radius = 22.0
+interval = 8.0
+cap = 1

@@ -237,3 +237,45 @@ materials = { copper = 600, iron = 10200 }
 [[item.stats]]
 kind = "carry"
 flat = 48
+
+
+# ---- C8: the Shapers' legacy ----
+
+[[item]]
+id = "alien_component"
+name = "Alien Component"
+texture = "@blue_glass"
+material_class = "exceptional"
+
+[[item]]
+id = "alien_alloy"
+name = "Alien Alloy"
+texture = "@steel_block"
+material_class = "exceptional"
+
+[[item]]
+id = "energy_crystal"
+name = "Energy Crystal"
+texture = "@amber_glass"
+material_class = "exceptional"
+light = 0
+
+[[item]]
+id = "archive_data"
+name = "Archive Data Slate"
+texture = "@etched_tablet"
+material_class = "exceptional"
+
+[[item]]
+id = "alien_exoframe"
+name = "Alien Exoframe"
+texture = "@steel_chestplate"
+durability = 240
+armor = { slot = "chest", points = 6 }
+frame = { slots = [ { type = "plate", max = 2 }, { type = "lining", max = 1 }, { type = "utility", max = 2 } ] }
+[[item.stats]]
+kind = "health"
+flat = 10
+[[item.stats]]
+kind = "stamina_regen"
+mult_permille = 1150
