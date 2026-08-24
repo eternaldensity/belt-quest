@@ -123,3 +123,17 @@ fn on_enemy_destroyed(name, face, u, y, v) {
         quest_progress("the_archive_open", "warden", 1);
     }
 }
+
+// ---- C7: settlement order contracts (crafting feeds the meter) ----
+
+fn on_craft(item_name) {
+    if item_name == "belt_quest:iron_plate_component" {
+        quest_progress("order_haven_plates", "plates", 1);
+    }
+    if item_name == "belt_quest:machine_frame" {
+        quest_progress("order_emberwatch_frames", "frames", 1);
+    }
+    if item_name == "belt_quest:copper_wire" {
+        quest_progress("order_saltmarsh_wire", "wire", 1);
+    }
+}

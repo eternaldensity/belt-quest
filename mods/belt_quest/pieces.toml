@@ -71,6 +71,8 @@ cells = [
   { du = 2, dy = 2, dv = 0, block = "base:spruce_planks" },
   { du = 3, dy = 2, dv = 0, block = "base:spruce_planks" },
   { du = 4, dy = 2, dv = 0, block = "base:spruce_planks" },
+  # Ava's barter counter (capability C7): claim and run it.
+  { du = 4, dy = 1, dv = 2, block = "base:stall_counter" },
 ]
 
 [[piece]]
@@ -806,6 +808,7 @@ cells = [
   { du = 3, dy = 0, dv = 4, block = "base:packed_earth" },
   { du = 4, dy = 0, dv = 4, block = "base:packed_earth" },
   { du = 1, dy = 1, dv = 1, block = "belt_quest:depot" },
+  { du = 3, dy = 1, dv = 1, block = "base:stall_counter" },
 ]
 
 [[pool]]

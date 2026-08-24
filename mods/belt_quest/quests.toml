@@ -102,3 +102,46 @@ objectives = [
 rewards = [
   { item = "base:old_coin", count = 150 },
 ]
+
+# ---- C7: settlement orders (production contracts) ----
+# Progressed by crafting (on_craft hook in main.rhai); paid in credits
+# and standing by the ordering settlement.
+
+[[quest]]
+id = "order_haven_plates"
+title = "Order: Iron Plates for Haven"
+description = "Haven's wall crew is behind schedule. Produce 8 iron plates at any assembler."
+giver = "elder_marek"
+objectives = [
+  { key = "plates", description = "Produce iron plates", count = 8 },
+]
+rewards = [
+  { item = "base:old_coin", count = 120 },
+  { add_reputation = "haven", rep_amount = 20 },
+]
+
+[[quest]]
+id = "order_emberwatch_frames"
+title = "Order: Frames for Emberwatch"
+description = "Bryn's crew is rigging a second adit and needs machine frames. Assemble 2 at any assembler."
+giver = "warden_bryn"
+objectives = [
+  { key = "frames", description = "Assemble machine frames", count = 2 },
+]
+rewards = [
+  { item = "base:old_coin", count = 100 },
+  { add_reputation = "emberwatch", rep_amount = 25 },
+]
+
+[[quest]]
+id = "order_saltmarsh_wire"
+title = "Order: Wire for Saltmarsh"
+description = "Oda is rewiring her post by lamplight. Draw 10 copper wire at the assembler and she'll owe you."
+giver = "trader_oda"
+objectives = [
+  { key = "wire", description = "Draw copper wire", count = 10 },
+]
+rewards = [
+  { item = "base:old_coin", count = 90 },
+  { add_reputation = "saltmarsh_post", rep_amount = 25 },
+]
