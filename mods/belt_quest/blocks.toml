@@ -117,3 +117,11 @@ texture = { top = "@copper_block", side = "@iron_block" }
 hardness = 3.0
 tool = "pickaxe"
 interaction = "screen:belt_quest:conduits"
+
+[[block]]
+id = "depot"
+name = "Settlement Depot"
+texture = { top = "@blue_glass", side = "@steel_block" }
+hardness = 3.0
+tool = "pickaxe"
+interaction = "depot:belt_quest:haven"

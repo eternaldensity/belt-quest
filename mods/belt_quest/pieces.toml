@@ -96,8 +96,10 @@ cells = [
   { du = 2, dy = 0, dv = 4, block = "base:cobblestone" },
   { du = 3, dy = 0, dv = 4, block = "base:cobblestone" },
   { du = 4, dy = 0, dv = 4, block = "base:cobblestone" },
-  # The factory exists before the player does.
-  { du = 1, dy = 1, dv = 3, block = "belt_quest:smelter" },
+  # The factory exists before the player does — and the settlement's
+  # logistics mouth (capability E13): deliver what Haven needs.
+  { du = 1, dy = 1, dv = 3, block = "belt_quest:depot" },
+  { du = 2, dy = 1, dv = 3, block = "belt_quest:smelter" },
   { du = 3, dy = 1, dv = 3, block = "belt_quest:assembler" },
   # Sal left the Spark's materials by the door.
   { du = 4, dy = 1, dv = 1, block = "base:chest" },

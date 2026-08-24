@@ -1,3 +1,6 @@
+# Settlements (capability E13): delivery needs convert into standing at
+# the workshop depot. Food and building materials always welcome.
+
 # Flag-gated doors (spec 2.5). The mines' conduit lock reads the
 # mines_conduits player flag, set by solving the valve puzzle.
 
@@ -9,3 +12,22 @@ flag = "mines_conduits"
 value = "true"
 unlocked_block = "base:air"
 message = "Dead conduits. Somewhere here there is a hub that still has power."
+
+[[settlement]]
+id = "haven"
+rep_key = "rep_haven"
+tiers = [
+  { tier = 2, threshold = 100 },
+]
+
+[[settlement.need]]
+item = "base:bread"
+rep = 2
+
+[[settlement.need]]
+item = "base:planks"
+rep = 1
+
+[[settlement.need]]
+item = "base:raw_iron"
+rep = 1
