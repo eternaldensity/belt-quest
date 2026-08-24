@@ -272,6 +272,16 @@ loop and proves the factory↔RPG fusion end to end.
 > deliver, staging counts against appetite, reputation pays through the
 > player-KV channel (guests via S2C::SettlementDelivery). PROTOCOL 46.
 >
+> **C4 world depth: wave one LANDED.**
+> - **Haven growth tiers**: watchtower (rep 100) and granary (rep 300)
+>   authored as settlement-tier pieces — placed at worldgen, hidden
+>   until standing crosses each threshold. The quest arc now pays
+>   reputation (+10/+15/+15/+25), so the arc itself grows the town.
+> - **Frontier outposts**: Emberwatch (mountains; Warden Bryn; wants
+>   iron + coal) and Saltmarsh Post (scrubland; trader Oda; wants plank
+>   bundles + copper). Each with depot economy, greeter dialogue, and a
+>   warden's cudgel recipe from outpost timber.
+>
 > **C8 alien arc: wave one LANDED.**
 > - **Alien Ruins** (`alien_ruins`) + **The Archive** (`the_archive`,
 >   straight to the Warden): Shaper-stone pieces lit from within,
