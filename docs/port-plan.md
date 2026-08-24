@@ -284,6 +284,20 @@ loop and proves the factory↔RPG fusion end to end.
 > - Credits remain old_coin (real texture, real flows); market pricing
 >   hooks stay a future engine item once stalls gain dynamic pricing.
 >
+> **C8 wave two: the relationship economy LANDED.**
+> - **Standing has consequences**: killing constructs costs custodian
+>   standing (−30/−60, polled each tick); crossing +300 completes
+>   *Provisional Partners* (learn_recipe: Custodian Beacon); crossing
+>   −300 completes *Archived Hostility* (learn_recipe: salvaged beam
+>   emitter + reactive plating).
+> - **The Custodian Beacon is a real defender in pure content**: a
+>   non-hostile beacon-sentinel variant with a prey list (spiders,
+>   wolves, stalkers, boars) and flee_range 0 — it hunts frontier
+>   predators and ignores people. The beacon block registers as its
+>   nest; breaking it stands the watch down.
+> - **Surface ruins**: rare worldgen assembly for Act 1 discovery —
+>   buried Shaper stonework with a garrison nest and ruins cache.
+>
 > **C4 world depth: wave one LANDED.**
 > - **Haven growth tiers**: watchtower (rep 100) and granary (rep 300)
 >   authored as settlement-tier pieces — placed at worldgen, hidden
