@@ -266,6 +266,12 @@ loop and proves the factory↔RPG fusion end to end.
 > - Blueprint loop v1: rare boss drops are collectibles; advanced gear
 >   unlocks via tech-gated recipes whose keys ride quest rewards.
 >
+> **E13 depot logistics LANDED** (WildForge `main`). `BlockEntity::Depot`
+> bound via `interaction = "depot:<settlement>"`; settlements declare
+> `[[settlement.need]] { item, rep }`; hand deposits and belt ports
+> deliver, staging counts against appetite, reputation pays through the
+> player-KV channel (guests via S2C::SettlementDelivery). PROTOCOL 46.
+>
 > **C6 skill-tree data LANDED.** Six visible branches (Survivalist,
 > Warrior, Engineer, Logistics, Diplomat, Explorer), **90 authored
 > nodes** at per-tier costs 1–4, XP sources tuned with diminishing
