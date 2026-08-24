@@ -15,6 +15,7 @@ objectives = [
 ]
 rewards = [
   { item = "base:old_coin", count = 25 },
+  { add_reputation = "haven", rep_amount = 10 },
 ]
 
 [[quest]]
@@ -29,6 +30,7 @@ objectives = [
 rewards = [
   { item = "base:old_coin", count = 50 },
   { item = "base:iron_pickaxe", count = 1 },
+  { add_reputation = "haven", rep_amount = 15 },
 ]
 
 [[quest]]
@@ -42,6 +44,7 @@ objectives = [
 rewards = [
   { item = "base:old_coin", count = 50 },
   { item = "belt_quest:health_stim", count = 2 },
+  { add_reputation = "haven", rep_amount = 15 },
 ]
 
 [[quest]]
@@ -55,6 +58,7 @@ objectives = [
 rewards = [
   { item = "base:old_coin", count = 75 },
   { item = "belt_quest:light_melee_frame", count = 1 },
+  { add_reputation = "haven", rep_amount = 25 },
 ]
 
 # The Foreman's conduit lock: solved valves complete this hidden quest;

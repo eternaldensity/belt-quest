@@ -279,3 +279,17 @@ flat = 10
 [[item.stats]]
 kind = "stamina_regen"
 mult_permille = 1150
+
+[[item]]
+id = "plank_bundle"
+name = "Plank Bundle"
+texture = "@planks"
+material_class = "renewable"
+
+[[item]]
+id = "warden_cudgel"
+name = "Warden's Cudgel"
+texture = "@stone_axe"
+durability = 130
+damage = 8
+damage_type = "blunt"

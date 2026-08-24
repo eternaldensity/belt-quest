@@ -174,3 +174,15 @@ station = "belt_quest:alien_fabricator"
 pattern = ["cac", "aea", "cac"]
 keys = { c = "alien_component", a = "alien_alloy", e = "energy_crystal" }
 output = "belt_quest:archive_entry"
+
+# ---- C4: outpost supply goods ----
+
+[[recipe]]
+pattern = ["pp", "pp"]
+keys = { p = "base:planks" }
+output = "belt_quest:plank_bundle"
+
+[[recipe]]
+pattern = [" s", "si", "s "]
+keys = { s = "base:spruce_log", i = "base:iron_ingot" }
+output = "belt_quest:warden_cudgel"

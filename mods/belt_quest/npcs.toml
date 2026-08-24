@@ -51,3 +51,24 @@ dialogue = "custodian"
 talk_radius = 3.0
 sound_pitch = 1.6
 pause = 5.0
+
+# ---- frontier outposts (C4) ----
+
+[[npc]]
+id = "warden_bryn"
+name = "Warden Bryn"
+tex = "@iron_chestplate"
+dialogue = "bryn"
+talk_radius = 3.5
+sound_pitch = 1.0
+patrol = [[0.0, 0.0, 0.0], [1.0, 0.0, 1.0]]
+pause = 4.0
+
+[[npc]]
+id = "trader_oda"
+name = "Oda"
+tex = "@bronze_chestplate"
+dialogue = "oda"
+talk_radius = 3.0
+sound_pitch = 1.15
+pause = 3.5

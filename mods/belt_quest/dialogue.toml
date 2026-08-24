@@ -172,3 +172,51 @@ condition = "belt_quest:strange_signals_done"
 label = "I'm on it."
 callback = "belt_quest:accept_into_the_deep"
 next = ""
+
+[[dialogue]]
+id = "bryn"
+root = "welcome"
+
+[[dialogue.nodes]]
+id = "welcome"
+text = "Emberwatch. Mind the ridge wolves — they've learned the depot means food carts. Depot's by the yard; iron and coal keep us in powder and lamp oil."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "What's the ridge like?"
+next = "ridge"
+
+[[dialogue.nodes.choices]]
+label = "Goodbye."
+next = ""
+
+[[dialogue.nodes]]
+id = "ridge"
+text = "Iron in every seam and something big denning above the tree line. We pay good standing for ore and coal — Haven's bread wouldn't survive the climb."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Noted."
+next = ""
+
+[[dialogue]]
+id = "oda"
+root = "welcome"
+
+[[dialogue.nodes]]
+id = "welcome"
+text = "Oda's post, last roof before the salt flats. Planks and copper keep my yard standing; everything else is conversation."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Any word from the ruins?"
+next = "ruins"
+
+[[dialogue.nodes.choices]]
+label = "Goodbye."
+next = ""
+
+[[dialogue.nodes]]
+id = "ruins"
+text = "Caravans say the glass doors glow at night now. I sell maps, not opinions. But if you go — the yard buys planks and copper first."
+condition = ""
+[[dialogue.nodes.choices]]
+label = "Fair enough."
+next = ""

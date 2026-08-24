@@ -134,12 +134,60 @@ cells = [
   { du = 3, dy = 1, dv = 4, block = "base:cobblestone" },
 ]
 
+# Growth tiers: placed at worldgen, hidden until reputation crosses
+# each threshold (spec 3.4).
+
+[[piece]]
+id = "haven_watchtower"
+settlement_tier = 2
+connectors = []
+cells = [
+  { du = 0, dy = 0, dv = 0, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 0, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 0, dy = 1, dv = 0, block = "base:cobblestone" },
+  { du = 1, dy = 1, dv = 0, block = "base:cobblestone" },
+  { du = 0, dy = 2, dv = 0, block = "base:limestone_bricks" },
+  { du = 1, dy = 2, dv = 0, block = "base:limestone_bricks" },
+  { du = 0, dy = 3, dv = 0, block = "base:limestone_bricks" },
+  { du = 1, dy = 3, dv = 0, block = "base:limestone_bricks" },
+  { du = 0, dy = 4, dv = 0, block = "base:limestone_bricks" },
+  { du = 1, dy = 4, dv = 0, block = "base:limestone_bricks" },
+]
+
+[[piece]]
+id = "haven_granary"
+settlement_tier = 3
+connectors = []
+chests = [
+  { du = 1, dy = 1, dv = 1, loot = "belt_quest:mineshaft_cache" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 0, block = "base:planks" },
+  { du = 1, dy = 0, dv = 0, block = "base:planks" },
+  { du = 2, dy = 0, dv = 0, block = "base:planks" },
+  { du = 0, dy = 0, dv = 1, block = "base:planks" },
+  { du = 2, dy = 0, dv = 1, block = "base:planks" },
+  { du = 0, dy = 0, dv = 2, block = "base:planks" },
+  { du = 1, dy = 0, dv = 2, block = "base:planks" },
+  { du = 2, dy = 0, dv = 2, block = "base:planks" },
+  { du = 0, dy = 1, dv = 0, block = "base:spruce_log" },
+  { du = 2, dy = 1, dv = 0, block = "base:spruce_log" },
+  { du = 0, dy = 1, dv = 2, block = "base:spruce_log" },
+  { du = 2, dy = 1, dv = 2, block = "base:spruce_log" },
+  { du = 1, dy = 2, dv = 0, block = "base:planks" },
+  { du = 1, dy = 2, dv = 2, block = "base:planks" },
+]
+
 [[pool]]
 id = "haven"
 entries = [
   { piece = "haven_market", weight = 2 },
   { piece = "haven_workshop", weight = 2 },
   { piece = "haven_wall", weight = 2 },
+  { piece = "haven_watchtower", weight = 1 },
+  { piece = "haven_granary", weight = 1 },
 ]
 
 [[assembly]]
@@ -149,8 +197,9 @@ rarity = 200
 entry = "haven_hall"
 pools = { street = "haven" }
 max_depth = 2
-max_pieces = 4
+max_pieces = 6
 terrain = "none"
+settlement = "belt_quest:haven"
 
 # ---------------- the Brood Gallery ----------------
 
@@ -625,3 +674,221 @@ terrain = "none"
 
 [assembly.dungeon]
 reset = 2400.0
+
+# ---------------- Emberwatch (mountains outpost) ----------------
+# A mining watch-post under an iron ridge. Bryn keeps the count.
+
+[[piece]]
+id = "emberwatch_gate"
+connectors = [
+  { du = 5, dy = 0, dv = 3, kind = "trail", facing = "east" },
+]
+markers = [
+  { du = 2, dy = 1, dv = 2, kind = "spawn:npc:belt_quest:warden_bryn" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:stone" },
+  { du = 1, dy = 0, dv = 1, block = "base:stone" },
+  { du = 2, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 1, block = "base:stone" },
+  { du = 5, dy = 0, dv = 1, block = "base:stone" },
+  { du = 0, dy = 0, dv = 2, block = "base:stone" },
+  { du = 5, dy = 0, dv = 2, block = "base:stone" },
+  { du = 0, dy = 0, dv = 3, block = "base:stone" },
+  { du = 5, dy = 0, dv = 3, block = "base:stone" },
+  { du = 0, dy = 0, dv = 4, block = "base:stone" },
+  { du = 1, dy = 0, dv = 4, block = "base:stone" },
+  { du = 2, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 4, block = "base:stone" },
+  { du = 5, dy = 0, dv = 4, block = "base:stone" },
+]
+
+[[piece]]
+id = "emberwatch_depot_yard"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "trail", facing = "west" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 0, loot = "belt_quest:mineshaft_cache" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 3, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 1, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 2, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 3, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 4, block = "base:cobblestone" },
+  { du = 1, dy = 1, dv = 1, block = "belt_quest:depot" },
+  { du = 3, dy = 1, dv = 1, block = "base:chest" },
+]
+
+[[pool]]
+id = "emberwatch"
+entries = [
+  { piece = "emberwatch_depot_yard", weight = 1 },
+]
+
+[[assembly]]
+id = "emberwatch_post"
+biomes = ["mountains"]
+rarity = 150
+entry = "emberwatch_gate"
+pools = { trail = "emberwatch" }
+max_depth = 2
+max_pieces = 2
+terrain = "none"
+
+# ---------------- Saltmarsh Post (scrubland trading post) ----------------
+# Oda trades building materials out where the scrub meets the sea road.
+
+[[piece]]
+id = "saltmarsh_stand"
+connectors = [
+  { du = 5, dy = 0, dv = 3, kind = "street", facing = "east" },
+]
+markers = [
+  { du = 2, dy = 1, dv = 2, kind = "spawn:npc:belt_quest:trader_oda" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:sand" },
+  { du = 1, dy = 0, dv = 1, block = "base:sand" },
+  { du = 2, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 1, block = "base:sand" },
+  { du = 5, dy = 0, dv = 1, block = "base:sand" },
+  { du = 0, dy = 0, dv = 2, block = "base:sand" },
+  { du = 5, dy = 0, dv = 2, block = "base:sand" },
+  { du = 0, dy = 0, dv = 3, block = "base:sand" },
+  { du = 5, dy = 0, dv = 3, block = "base:sand" },
+  { du = 0, dy = 0, dv = 4, block = "base:sand" },
+  { du = 1, dy = 0, dv = 4, block = "base:sand" },
+  { du = 2, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 4, block = "base:sand" },
+  { du = 5, dy = 0, dv = 4, block = "base:sand" },
+  { du = 1, dy = 1, dv = 0, block = "base:spruce_log" },
+  { du = 4, dy = 1, dv = 0, block = "base:spruce_log" },
+  { du = 2, dy = 2, dv = 0, block = "base:spruce_planks" },
+  { du = 3, dy = 2, dv = 0, block = "base:spruce_planks" },
+]
+
+[[piece]]
+id = "saltmarsh_yard"
+connectors = [
+  { du = 0, dy = 0, dv = 2, kind = "street", facing = "west" },
+]
+chests = [
+  { du = 5, dy = 1, dv = 0, loot = "belt_quest:gallery_cache" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 1, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 2, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 1, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 2, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 2, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 3, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 3, block = "base:packed_earth" },
+  { du = 0, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 1, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 2, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 3, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 4, dy = 0, dv = 4, block = "base:packed_earth" },
+  { du = 1, dy = 1, dv = 1, block = "belt_quest:depot" },
+]
+
+[[pool]]
+id = "saltmarsh"
+entries = [
+  { piece = "saltmarsh_yard", weight = 1 },
+]
+
+[[assembly]]
+id = "saltmarsh_trading_post"
+biomes = ["scrubland"]
+rarity = 150
+entry = "saltmarsh_stand"
+pools = { street = "saltmarsh" }
+max_depth = 2
+max_pieces = 2
+terrain = "none"
+
+# Settlements (capability E13): delivery needs convert into standing at
+# the workshop depot. Food and building materials always welcome.
+
+# Flag-gated doors (spec 2.5). The mines' conduit lock reads the
+# mines_conduits player flag, set by solving the valve puzzle.
+
+[[feature]]
+type = "gate"
+id = "sealed_mines_door"
+block = "base:cracked_masonry"
+flag = "mines_conduits"
+value = "true"
+unlocked_block = "base:air"
+message = "Dead conduits. Somewhere here there is a hub that still has power."
+
+[[settlement]]
+id = "haven"
+rep_key = "rep_haven"
+tiers = [
+  { tier = 2, threshold = 100 },
+  { tier = 3, threshold = 300 },
+]
+
+# Frontier outposts (belts 03-world-and-settlements): smaller appetites,
+# lonelier walls. Each runs its own depot economy.
+
+[[settlement]]
+id = "emberwatch"
+rep_key = "rep_emberwatch"
+tiers = [
+  { tier = 2, threshold = 150 },
+]
+
+[[settlement.need]]
+item = "base:raw_iron"
+rep = 2
+
+[[settlement.need]]
+item = "base:coal"
+rep = 1
+
+[[settlement]]
+id = "saltmarsh_post"
+rep_key = "rep_saltmarsh"
+tiers = [
+  { tier = 2, threshold = 150 },
+]
+
+[[settlement.need]]
+item = "belt_quest:plank_bundle"
+rep = 2
+
+[[settlement.need]]
+item = "base:raw_copper"
+rep = 1
+
+
+[[settlement.need]]
+item = "base:bread"
+rep = 2
+
+[[settlement.need]]
+item = "base:planks"
+rep = 1
+
+[[settlement.need]]
+item = "base:raw_iron"
+rep = 1
