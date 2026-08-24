@@ -272,6 +272,20 @@ loop and proves the factory↔RPG fusion end to end.
 > deliver, staging counts against appetite, reputation pays through the
 > player-KV channel (guests via S2C::SettlementDelivery). PROTOCOL 46.
 >
+> **C8 alien arc: wave one LANDED.**
+> - **Alien Ruins** (`alien_ruins`) + **The Archive** (`the_archive`,
+>   straight to the Warden): Shaper-stone pieces lit from within,
+>   ruins caches and the archive hoard.
+> - **Custodian constructs**: E9 shield-bearer sentinels (hackable for
+>   alloy/crystals) and **The Archive Warden** (controller, resists
+>   fire, drops archive data).
+> - **Alien fabricator tier**: workbench-handler machine; exoframe,
+>   alien components, and the Archive Gate itself are station recipes.
+> - **First contact**: the Custodian NPC answers the decoder —
+>   cooperative/hostile dialogue choices log into a custodian_rep
+>   storage channel surfaced on the Archive Terminal screen; Strange
+>   Signals → Into the Deep quest chain wired through Sal.
+>
 > **C6 skill-tree data LANDED.** Six visible branches (Survivalist,
 > Warrior, Engineer, Logistics, Diplomat, Explorer), **90 authored
 > nodes** at per-tier costs 1–4, XP sources tuned with diminishing
