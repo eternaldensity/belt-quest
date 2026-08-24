@@ -170,3 +170,16 @@ hardness = 8.0
 tool = "pickaxe"
 requires_tool = true
 interaction = "dungeon_entry:belt_quest:the_archive"
+
+# Cooperative-path reward (belts 09): a Custodian Beacon posts a sentinel
+# that patrols the area and hunts frontier predators — not people. Break
+# the beacon to stand the garrison down.
+[[block]]
+id = "custodian_beacon"
+name = "Custodian Beacon"
+texture = { top = "@teal_glass", side = "@iron_block" }
+hardness = 5.0
+tool = "pickaxe"
+requires_tool = true
+light = 14
+light_color = [0.4, 0.9, 1.0]

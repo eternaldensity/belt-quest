@@ -145,3 +145,30 @@ rewards = [
   { item = "base:old_coin", count = 90 },
   { add_reputation = "saltmarsh_post", rep_amount = 25 },
 ]
+
+# ---- C8 wave two: relationship thresholds ----
+# Completed by main.rhai when the custodian_rep channel crosses each
+# threshold; rewards are the path-locked technologies.
+
+[[quest]]
+id = "custodian_alliance"
+title = "Provisional Partners"
+description = "The Custodian's assessment has crossed cooperative threshold. Its fabrication templates unlock."
+objectives = [
+  { key = "assessed", description = "Earn Cooperative standing", count = 1 },
+]
+rewards = [
+  { learn_recipe = "belt_quest:custodian_beacon" },
+]
+
+[[quest]]
+id = "custodian_enmity"
+title = "Archived Hostility"
+description = "The Custodian's assessment has crossed hostile threshold. Salvage protocols unlock."
+objectives = [
+  { key = "assessed", description = "Earn Hostile standing", count = 1 },
+]
+rewards = [
+  { learn_recipe = "belt_quest:salvaged_beam_emitter" },
+  { learn_recipe = "belt_quest:reactive_plating" },
+]

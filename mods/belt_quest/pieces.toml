@@ -895,3 +895,46 @@ rep = 1
 [[settlement.need]]
 item = "base:raw_iron"
 rep = 1
+
+# ---------------- surface ruins (C8 Act 1 discovery) ----------------
+# Partially buried, dark, mysterious — worldgen assemblies, not runs.
+
+[[piece]]
+id = "surface_ruin_core"
+markers = [
+  { du = 2, dy = 1, dv = 2, kind = "spawn:nest:belt_quest:ruins_garrison" },
+]
+chests = [
+  { du = 4, dy = 1, dv = 3, loot = "belt_quest:ruins_cache" },
+]
+cells = [
+  { du = 0, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 1, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 2, dy = 0, dv = 0, block = "belt_quest:shaper_stone" },
+  { du = 3, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 4, dy = 0, dv = 0, block = "base:limestone_bricks" },
+  { du = 0, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 1, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 4, dy = 0, dv = 2, block = "base:cobblestone" },
+  { du = 0, dy = 0, dv = 3, block = "base:limestone_bricks" },
+  { du = 1, dy = 0, dv = 3, block = "belt_quest:shaper_stone" },
+  { du = 2, dy = 0, dv = 3, block = "base:limestone_bricks" },
+  { du = 3, dy = 0, dv = 3, block = "base:limestone_bricks" },
+  { du = 4, dy = 0, dv = 3, block = "base:limestone_bricks" },
+  { du = 0, dy = 1, dv = 0, block = "base:limestone_bricks" },
+  { du = 4, dy = 1, dv = 0, block = "base:limestone_bricks" },
+  { du = 0, dy = 1, dv = 3, block = "base:limestone_bricks" },
+  { du = 4, dy = 1, dv = 3, block = "base:limestone_bricks" },
+  { du = 0, dy = 2, dv = 0, block = "base:limestone_bricks" },
+]
+
+[[assembly]]
+id = "surface_ruins"
+biomes = ["plains", "scrubland", "desert"]
+rarity = 400
+entry = "surface_ruin_core"
+pools = {}
+max_depth = 1
+max_pieces = 1
+terrain = "none"

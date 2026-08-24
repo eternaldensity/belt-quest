@@ -88,3 +88,14 @@ species = "belt_quest:archive_warden"
 radius = 22.0
 interval = 8.0
 cap = 1
+
+# The beacon's standing garrison: one sentinel on post while the beacon
+# stands; breaking it stands the watch down.
+
+[[nest]]
+id = "beacon_watch"
+block = "belt_quest:custodian_beacon"
+species = "belt_quest:beacon_sentinel"
+radius = 24.0
+interval = 30.0
+cap = 1

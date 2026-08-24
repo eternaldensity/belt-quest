@@ -186,3 +186,27 @@ output = "belt_quest:plank_bundle"
 pattern = [" s", "si", "s "]
 keys = { s = "base:spruce_log", i = "base:iron_ingot" }
 output = "belt_quest:warden_cudgel"
+
+# ---- C8 wave two: path-locked recipes ----
+
+# Cooperative: the Custodian shares the beacon template.
+[[recipe]]
+tech = "learned:belt_quest:custodian_beacon"
+pattern = ["aca", "cac", "aaa"]
+keys = { a = "alien_alloy", c = "energy_crystal" }
+output = "belt_quest:custodian_beacon"
+
+# Hostile: field-salvage from downed constructs.
+[[recipe]]
+tech = "learned:belt_quest:salvaged_beam_emitter"
+station = "belt_quest:alien_fabricator"
+pattern = ["ae"]
+keys = { a = "alien_alloy", e = "energy_crystal" }
+output = "belt_quest:salvaged_beam_emitter"
+
+[[recipe]]
+tech = "learned:belt_quest:reactive_plating"
+station = "belt_quest:alien_fabricator"
+pattern = ["aa"]
+keys = { a = "alien_alloy" }
+output = "belt_quest:reactive_plating"

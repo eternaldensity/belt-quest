@@ -118,12 +118,6 @@ fn accept_into_the_deep() {
 
 // Archive data slates feed the Custodian relationship when delivered by
 // hand to any depot bound to the archive facility.
-fn on_enemy_destroyed(name, face, u, y, v) {
-    if name == "belt_quest:archive_warden" {
-        quest_progress("the_archive_open", "warden", 1);
-    }
-}
-
 // ---- C7: settlement order contracts (crafting feeds the meter) ----
 
 fn on_craft(item_name) {
@@ -136,4 +130,35 @@ fn on_craft(item_name) {
     if item_name == "belt_quest:copper_wire" {
         quest_progress("order_saltmarsh_wire", "wire", 1);
     }
+}
+
+// ---- C8 wave two: the relationship economy ----
+// Killing Custodian constructs costs standing; solving their problems
+// pays it. Threshold crossings complete the path quests, which unlock
+// the path technologies.
+
+fn custodian_rep_delta(delta) {
+    let rep = storage_get("custodian_rep");
+    let n = if rep == "" { 0 } else { rep.parse_int() };
+    let next = (n + delta).clamp(-1000, 1000);
+    storage_set("custodian_rep", next.to_string());
+}
+
+fn custodian_thresholds() {
+    let rep = storage_get("custodian_rep");
+    let n = if rep == "" { 0 } else { rep.parse_int() };
+    if n >= 300 && storage_get("quest_custodian_alliance") == "" {
+        quest_accept("custodian_alliance");
+        quest_progress("custodian_alliance", "assessed", 1);
+        hud_message("'Assessment complete. Provisional partners.'");
+    }
+    if n <= -300 && storage_get("quest_custodian_enmity") == "" {
+        quest_accept("custodian_enmity");
+        quest_progress("custodian_enmity", "assessed", 1);
+        hud_message("'Assessment complete. Salvage protocols enabled.'");
+    }
+}
+
+fn on_tick(dt) {
+    custodian_thresholds();
 }
