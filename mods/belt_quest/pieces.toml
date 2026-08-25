@@ -14,6 +14,7 @@
 id = "haven_hall"
 connectors = [
   { du = 6, dy = 0, dv = 3, kind = "street", facing = "east" },
+  { du = 0, dy = 0, dv = 3, kind = "street", facing = "west" },
 ]
 markers = [
   { du = 2, dy = 1, dv = 2, kind = "spawn:npc:belt_quest:elder_marek" },
@@ -142,7 +143,9 @@ cells = [
 [[piece]]
 id = "haven_watchtower"
 settlement_tier = 2
-connectors = []
+connectors = [
+  { du = 0, dy = 0, dv = 0, kind = "street", facing = "west" },
+]
 cells = [
   { du = 0, dy = 0, dv = 0, block = "base:cobblestone" },
   { du = 1, dy = 0, dv = 0, block = "base:cobblestone" },
@@ -161,7 +164,9 @@ cells = [
 [[piece]]
 id = "haven_granary"
 settlement_tier = 3
-connectors = []
+connectors = [
+  { du = 0, dy = 0, dv = 0, kind = "street", facing = "west" },
+]
 chests = [
   { du = 1, dy = 1, dv = 1, loot = "belt_quest:mineshaft_cache" },
 ]
@@ -850,6 +855,18 @@ tiers = [
   { tier = 3, threshold = 300 },
 ]
 
+[[settlement.need]]
+item = "base:bread"
+rep = 2
+
+[[settlement.need]]
+item = "base:planks"
+rep = 1
+
+[[settlement.need]]
+item = "base:raw_iron"
+rep = 1
+
 # Frontier outposts (belts 03-world-and-settlements): smaller appetites,
 # lonelier walls. Each runs its own depot economy.
 
@@ -884,17 +901,6 @@ item = "base:raw_copper"
 rep = 1
 
 
-[[settlement.need]]
-item = "base:bread"
-rep = 2
-
-[[settlement.need]]
-item = "base:planks"
-rep = 1
-
-[[settlement.need]]
-item = "base:raw_iron"
-rep = 1
 
 # ---------------- surface ruins (C8 Act 1 discovery) ----------------
 # Partially buried, dark, mysterious — worldgen assemblies, not runs.

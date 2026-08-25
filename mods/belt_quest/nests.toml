@@ -12,7 +12,7 @@ cap = 3
 
 [[nest]]
 id = "brood_den"
-block = "belt_quest:brood_egg_cluster"
+block = "belt_quest:brood_cluster"
 species = "belt_quest:brood_mother"
 radius = 20.0
 interval = 6.0
@@ -65,7 +65,7 @@ cap = 2
 
 [[nest]]
 id = "foreman_den"
-block = "belt_quest:brood_egg_cluster"
+block = "belt_quest:foreman_console"
 species = "belt_quest:the_foreman"
 radius = 22.0
 interval = 6.0
@@ -83,7 +83,7 @@ cap = 2
 
 [[nest]]
 id = "archive_core"
-block = "belt_quest:brood_egg_cluster"
+block = "belt_quest:archive_pylon"
 species = "belt_quest:archive_warden"
 radius = 22.0
 interval = 8.0

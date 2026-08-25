@@ -17,7 +17,17 @@ fn on_screen_click(screen, action) {
         }
     }
     if screen == "belt_quest:conduits" && action.starts_with("valve_") {
-        on_screen_click_valve(action.substr(6));
+        // This rhai has no substr; map the whole action name instead.
+        let letter = if action == "valve_a" {
+            "a"
+        } else if action == "valve_b" {
+            "b"
+        } else if action == "valve_c" {
+            "c"
+        } else {
+            "d"
+        };
+        on_screen_click_valve(letter);
     }
 }
 
