@@ -284,6 +284,24 @@ loop and proves the factory↔RPG fusion end to end.
 > - Credits remain old_coin (real texture, real flows); market pricing
 >   hooks stay a future engine item once stalls gain dynamic pricing.
 >
+> **C9 Chronarch arc: wave one LANDED.**
+> - **Aggression Index**: hidden counter tracked via storage KV in
+>   main.rhai — proactive wolf/deer/corvid kills raise it, quest kills
+>   don't; crossing 600 with Custodian standing < +300 accepts the
+>   first_crow quest, opening the arc.
+> - **Corvid faction roster**: Watcher (E9 phaser, blink-stutter),
+>   Rook (E9 tank, 15% knockback), Raven (E9 support, heals allies),
+>   **The Reflection** (controller boss — the clone). All iridescent
+>   black, temporal-themed drops.
+> - **Rookery nests**: dark-metal den blocks per unit tier.
+> - **Temporal skill branch**: 7th branch, 7 nodes, costs 1–4.
+> - **Trigger chain**: The First Crow → The Rookery → The Reflection;
+>   temporal shield/disruptor recipes tech-gated behind alien
+>   fabricator.
+>
+> Deferred to post-slice: escalation ladder, Crawler rail push,
+> bootstrap paradox dialogue trees, three-ending choice system.
+>
 > **C8 wave three + E15 guard archetype LANDED.**
 > - **Engine** (`AnimalDef.guards`): non-hostile creatures with
 >   `guards = true` target the nearest hostile mob via the trophic
