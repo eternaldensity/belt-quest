@@ -284,6 +284,22 @@ loop and proves the factory↔RPG fusion end to end.
 > - Credits remain old_coin (real texture, real flows); market pricing
 >   hooks stay a future engine item once stalls gain dynamic pricing.
 >
+> **C8 wave three + E15 guard archetype LANDED.**
+> - **Engine** (`AnimalDef.guards`): non-hostile creatures with
+>   `guards = true` target the nearest hostile mob via the trophic
+>   pre-pass (no hunger or prey-list requirement), approach via Stalk,
+>   and deal contact damage per swing through `MobEvent::HitMob` →
+>   `Mob::hurt()` — a real combat loop with retaliation, not an instant
+>   kill. Any mod can now author defenders.
+> - **Matter Converter**: forge-handler machine with alien skin; smelts
+>   raw chitin → alien alloy and corrupted tissue → energy crystals at
+>   35–40 s per batch. Conservation holds.
+> - **Beacon sentinel upgraded**: switches from the C8-w2 prey-list hack
+>   to the real guards archetype.
+> - **Transcendence quest chain**: Resonance Chamber (deliver alloy) →
+>   The Archive Opens (defeat Warden). Archive Data slates drop from
+>   the Warden for future Act-3 content.
+>
 > **In-engine playtest suite LANDED** (WildForge `src/tests/playtest.rs`):
 > 6 integration tests driving the real shipped mods tree through the real
 > world sim — Haven stamp + NPC spawns, quest arc script callbacks,
