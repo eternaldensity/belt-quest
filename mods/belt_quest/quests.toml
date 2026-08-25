@@ -172,3 +172,31 @@ rewards = [
   { learn_recipe = "belt_quest:salvaged_beam_emitter" },
   { learn_recipe = "belt_quest:reactive_plating" },
 ]
+
+# ---- C8 wave three: transcendence staging ----
+
+[[quest]]
+id = "resonance_chamber"
+title = "Resonance Chamber"
+description = "The Custodian's fabrication templates include a chamber that resonates with something deep below. Build it."
+giver = "tinkerer_sal"
+prereq = "into_the_deep"
+objectives = [
+  { key = "alloy", description = "Deliver alien alloy to the depot", count = 6 },
+]
+rewards = [
+  { item = "archive_data", count = 1 },
+  { add_reputation = "haven", rep_amount = 50 },
+]
+
+[[quest]]
+id = "the_archive_open"
+title = "The Archive Opens"
+description = "The Warden guards the deepest stacks. Its defeat opens the Archive."
+objectives = [
+  { key = "warden", description = "Defeat the Archive Warden", count = 1 },
+]
+rewards = [
+  { item = "alien_component", count = 3 },
+  { set_flag = "archive_opened", flag_value = "true" },
+]

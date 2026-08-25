@@ -253,6 +253,7 @@ aggro_range = 15
 ire_min = 0
 group = [1, 1]
 rarity = 1
+guards = true
 behavior = "shield_bearer"
 shield = { front_mult = 0.4, front_deg = 100 }
 hack = {

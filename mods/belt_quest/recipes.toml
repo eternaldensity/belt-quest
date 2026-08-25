@@ -210,3 +210,17 @@ station = "belt_quest:alien_fabricator"
 pattern = ["aa"]
 keys = { a = "alien_alloy" }
 output = "belt_quest:reactive_plating"
+
+# ---- C8 wave three: Matter Converter ----
+# Alien-tier processing that the frontier forge can't manage.
+# Conservation holds: each row's output declares exactly its input mass.
+
+[[smelt]]
+input = "belt_quest:raw_chitin"
+output = "belt_quest:alien_alloy"
+time = 40.0
+
+[[smelt]]
+input = "belt_quest:corrupted_tissue"
+output = "belt_quest:energy_crystal"
+time = 35.0

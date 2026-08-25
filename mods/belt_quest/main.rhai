@@ -172,3 +172,9 @@ fn custodian_thresholds() {
 fn on_tick(dt) {
     custodian_thresholds();
 }
+
+fn on_enemy_destroyed(name, face, u, y, v) {
+    if name == "belt_quest:archive_warden" {
+        quest_progress("the_archive_open", "warden", 1);
+    }
+}
