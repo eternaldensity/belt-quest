@@ -284,6 +284,16 @@ loop and proves the factory↔RPG fusion end to end.
 > - Credits remain old_coin (real texture, real flows); market pricing
 >   hooks stay a future engine item once stalls gain dynamic pricing.
 >
+> **In-engine playtest suite LANDED** (WildForge `src/tests/playtest.rs`):
+> 6 integration tests driving the real shipped mods tree through the real
+> world sim — Haven stamp + NPC spawns, quest arc script callbacks,
+> conduit lock sequences, depot appetite, Brood Gallery den population,
+> and Custodian rep thresholds. Caught and fixed: rhai `substr` missing
+> (valve handler crashed at runtime), shared nest blocks across den
+> species (first-match resolution shadowed later dens), connector-less
+> growth pieces unreachable by the walk, and xp-source duplicates
+> silently dropping skill branches.
+>
 > **C8 wave two: the relationship economy LANDED.**
 > - **Standing has consequences**: killing constructs costs custodian
 >   standing (−30/−60, polled each tick); crossing +300 completes
