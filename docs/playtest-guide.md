@@ -21,16 +21,17 @@ ln -s /path/to/belt-quest/mods/belt_quest /path/to/Wildforge/mods/belt_quest
 ### Create a world
 
 1. Launch `wildforge.exe`.
-2. On the title screen, pick **Survival** (or **Creative** for unrestricted testing).
-3. Name and create the world.
+2. On the title screen, pick either new-world button (Survival or Creative —
+   the mode is changed on the next screen).
+3. On the world-creation screen, use the **left/right arrows** next to
+   `MODE: SURVIVAL` to cycle to **MODE: BELT_QUEST**.
+4. Enter or roll a seed, then click **CREATE PLANET**.
 
-> **Known gap:** the title screen doesn't yet list mod-declared game modes.
-> To play with the belt_quest ruleset (no hunger, skills + equipment on,
-> nest spawns on, hostile ring off), quit after world creation and edit
-> `mode = "belt_quest"` inside `<save_dir>/world.toml`, then relaunch.
->
-> Without this edit, the world runs stock survival: hunger drains, hearts
-> loop fires, ring wardens spawn, and the skill/equipment screens stay locked.
+The belt_quest mode disables hunger, the hearts/offerings loop, hostile
+ring spawns, and PvP; it enables skills, modular equipment, nest spawns,
+and the industrial response gradient. If you forget to set it, you can
+still edit `mode = "belt_quest"` inside `<save_dir>/world.toml` and
+relaunch.
 
 ### Find Haven
 
