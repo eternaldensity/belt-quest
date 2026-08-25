@@ -989,3 +989,82 @@ description = "Discovered places remember you (+5 hearts of legend)."
 [[branch.node.stats]]
 kind = "health"
 flat = 5
+
+# ---- Temporal branch (C9, hidden — Chronarch arc only) ----
+
+[[branch]]
+id = "temporal"
+name = "Temporal"
+
+[[branch.node]]
+id = "temporal_awareness"
+name = "Temporal Awareness"
+tier = 1
+cost = 1
+description = "Chronarch enemies visible on minimap within 30m."
+[[branch.node.stats]]
+kind = "scan_range"
+flat = 3
+
+[[branch.node]]
+id = "chronal_resilience"
+name = "Chronal Resilience"
+tier = 1
+cost = 1
+description = "+2 hearts of temporal resistance."
+[[branch.node.stats]]
+kind = "health"
+flat = 2
+
+[[branch.node]]
+id = "echo_strike"
+name = "Echo Strike"
+tier = 1
+cost = 1
+description = "+3 stamina for temporal weapons."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 3
+
+[[branch.node]]
+id = "time_sense"
+name = "Time Sense"
+tier = 2
+cost = 2
+description = "Dodge timing window extends; +4 stamina."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 4
+
+[[branch.node]]
+id = "temporal_dodge"
+name = "Temporal Dodge"
+tier = 2
+cost = 2
+description = "Dodge creates an afterimage (+10% speed)."
+[[branch.node.stats]]
+kind = "move_speed"
+mult_permille = 1100
+
+[[branch.node]]
+id = "chronal_disruption"
+name = "Chronal Disruption"
+tier = 3
+cost = 3
+description = "Attacks against Chronarch units prevent self-healing (+5 stamina)."
+[[branch.node.stats]]
+kind = "stamina"
+flat = 5
+
+[[branch.node]]
+id = "rewind"
+name = "Rewind"
+tier = 4
+cost = 4
+description = "Once per minute, revert to your position and health from 3 seconds ago. (The closest stat proxy: +8 hearts, +15% health.)"
+[[branch.node.stats]]
+kind = "health"
+flat = 8
+[[branch.node.stats]]
+kind = "health"
+mult_permille = 1150

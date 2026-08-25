@@ -200,3 +200,43 @@ rewards = [
   { item = "alien_component", count = 3 },
   { set_flag = "archive_opened", flag_value = "true" },
 ]
+
+# ---- C9: the Chronarch arc ----
+
+[[quest]]
+id = "first_crow"
+title = "The First Crow"
+description = "Something black and angular is perched on the ridge, watching. Jonas wants to know what it is."
+giver = "guard_jonas"
+objectives = [
+  { key = "watcher", description = "Kill a Watcher", count = 1 },
+]
+rewards = [
+  { item = "temporal_fragment", count = 3 },
+  { item = "base:old_coin", count = 100 },
+]
+
+[[quest]]
+id = "the_rookery"
+title = "The Rookery"
+description = "They're building nests. Dark metal structures with antenna-feathers. Clear one out and bring back what you find."
+giver = "tinkerer_sal"
+prereq = "first_crow"
+objectives = [
+  { key = "rook", description = "Kill a Rook", count = 1 },
+]
+rewards = [
+  { item = "temporal_fragment", count = 5 },
+  { add_reputation = "haven", rep_amount = 30 },
+]
+
+[[quest]]
+id = "the_reflection_quest"
+title = "The Reflection"
+description = "There's something at the centre of it all. Something that looks back."
+objectives = [
+  { key = "reflection", description = "Face The Reflection", count = 1 },
+]
+rewards = [
+  { item = "temporal_core", count = 1 },
+]

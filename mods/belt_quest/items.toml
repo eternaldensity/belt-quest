@@ -309,3 +309,46 @@ durability = 120
 [[item.stats]]
 kind = "health"
 flat = 6
+
+# ---- C9: temporal materials ----
+
+[[item]]
+id = "temporal_fragment"
+name = "Temporal Fragment"
+texture = "@frost_shard"
+material_class = "exceptional"
+
+[[item]]
+id = "temporal_core"
+name = "Temporal Core"
+texture = "@etched_tablet"
+material_class = "exceptional"
+
+# Temporal Shield component (Temporal Shielding research unlock)
+[[item]]
+id = "temporal_shield_plate"
+name = "Temporal Shield Plate"
+texture = "@blue_glass"
+component = "plate"
+durability = 180
+materials = {}
+[[item.stats]]
+kind = "health"
+flat = 8
+[[item.stats]]
+kind = "move_speed"
+mult_permille = 1050
+
+# Temporal Disruptor weapon component (Temporal Weaponry research)
+[[item]]
+id = "temporal_disruptor"
+name = "Temporal Disruptor"
+texture = "@violet_glass"
+component = "blade"
+durability = 200
+damage = 8
+damage_type = "fire"
+materials = {}
+[[item.stats]]
+kind = "stamina"
+flat = 4

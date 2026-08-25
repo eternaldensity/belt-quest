@@ -99,3 +99,29 @@ species = "belt_quest:beacon_sentinel"
 radius = 24.0
 interval = 30.0
 cap = 1
+
+# ---- C9: Rookeries (dark iridescent nest structures) ----
+
+[[nest]]
+id = "rookery_watchers"
+block = "belt_quest:spider_burrow"
+species = "belt_quest:chronarch_watcher"
+radius = 24.0
+interval = 20.0
+cap = 3
+
+[[nest]]
+id = "rookery_rooks"
+block = "belt_quest:stalker_lair"
+species = "belt_quest:chronarch_rook"
+radius = 20.0
+interval = 30.0
+cap = 2
+
+[[nest]]
+id = "rookery_reflection"
+block = "belt_quest:archive_pylon"
+species = "belt_quest:the_reflection"
+radius = 28.0
+interval = 10.0
+cap = 1

@@ -35,9 +35,22 @@ fn on_screen_click(screen, action) {
 fn on_animal_killed(name, face, u, y, v) {
     if name == "base:wolf" {
         quest_progress("first_threat", "wolves", 1);
+        // Proactive wolf kills (not First Threat) raise the index.
+        let ft = storage_get("quest_first_threat");
+        if ft != "accepted" && ft != "done" {
+            aggression_delta(8);
+        }
     }
     if name == "belt_quest:cave_spider" {
         quest_progress("brood_gallery_cull", "spiders", 1);
+    }
+    // Neutral fauna: unprovoked.
+    if name == "base:deer" || name == "base:boar" || name == "base:goat" {
+        aggression_delta(8);
+    }
+    // Corvid kills are always proactive — they observe, they don't attack first.
+    if name == "belt_quest:chronarch_watcher" || name == "belt_quest:chronarch_rook" {
+        aggression_delta(15);
     }
 }
 
@@ -170,11 +183,32 @@ fn custodian_thresholds() {
 }
 
 fn on_tick(dt) {
+    chronarch_trigger_check();
+
     custodian_thresholds();
 }
 
 fn on_enemy_destroyed(name, face, u, y, v) {
     if name == "belt_quest:archive_warden" {
         quest_progress("the_archive_open", "warden", 1);
+    }
+}
+
+// ---- C9: the Aggression Index ----
+
+fn aggression_delta(points) {
+    let cur = storage_get("aggression_index");
+    let n = if cur == "" { 0 } else { cur.parse_int() };
+    storage_set("aggression_index", (n + points).clamp(0, 2000).to_string());
+}
+
+fn chronarch_trigger_check() {
+    let agg = storage_get("aggression_index");
+    let n = if agg == "" { 0 } else { agg.parse_int() };
+    let crep = storage_get("custodian_rep");
+    let cr = if crep == "" { 0 } else { crep.parse_int() };
+    if n >= 600 && cr < 300 && storage_get("quest_first_crow") == "" {
+        quest_accept("first_crow");
+        hud_message("Something watches from the ridge.");
     }
 }

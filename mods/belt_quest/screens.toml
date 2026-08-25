@@ -78,3 +78,22 @@ prefix = "Directive: "
 [[screen.button]]
 label = "Request maintenance directive"
 action = "request_directive"
+
+[[screen]]
+id = "temporal_scanner"
+title = "Temporal Scanner"
+
+[[screen.label]]
+text = "Readings from beyond the veil. The numbers do not make sense."
+
+[[screen.kv_label]]
+key = "aggression_index"
+prefix = "Anomaly Index: "
+
+[[screen.kv_label]]
+key = "custodian_rep"
+prefix = "Custodian Assessment: "
+
+[[screen.kv_label]]
+key = "quest_first_crow"
+prefix = "Contact Status: "

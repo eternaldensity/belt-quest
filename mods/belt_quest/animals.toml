@@ -353,3 +353,125 @@ drops = []
 body = { size = [7, 10, 7], at = [0, 3, 0] }
 head = { size = [5, 4, 5], at = [0, 9, -4] }
 leg = { size = [2, 3, 2], at = [2, 0, 2] }
+
+# ---- C9: the Chronarchs (corvid theme, belts 14-chronarch-arc) ----
+# They know your weaknesses because they ARE you — sent back, evolved,
+# and angry. Iridescent black, glowing eyes, temporal stutter.
+
+[[animal]]
+id = "chronarch_watcher"
+name = "Watcher"
+hostile = true
+biomes = ["plains", "forest", "scrubland"]
+health = 45
+speed = 4.0
+attack = 5
+tex = "@cracked_masonry"
+sound_pitch = 1.5
+aggro_range = 20
+ire_min = 0
+group = [1, 2]
+rarity = 1
+behavior = "phaser"
+phaser = { blink_range = 10, blink_cd = 3 }
+drops = [
+  { item = "temporal_fragment", min = 1, max = 2 },
+]
+[animal.model]
+body = { size = [6, 6, 10], at = [0, 3, 0] }
+head = { size = [5, 5, 6], at = [0, 5, -6] }
+leg = { size = [1, 3, 1], at = [2, 0, 3] }
+
+[[animal]]
+id = "chronarch_rook"
+name = "Rook"
+hostile = true
+biomes = ["plains", "forest"]
+health = 160
+speed = 2.4
+attack = 8
+tex = "@cracked_masonry"
+sound_pitch = 0.5
+aggro_range = 14
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "tank"
+tank = { knockback_mult = 0.15 }
+resist = [
+  { type = "slash", mult = 0.6 },
+  { type = "pierce", mult = 0.6 },
+]
+attacks = [
+  { name = "wing_slam", kind = "melee", damage = 9, cooldown = 2.0, damage_type = "blunt" },
+]
+drops = [
+  { item = "temporal_fragment", min = 2, max = 4 },
+  { item = "alien_alloy", min = 0, max = 1 },
+]
+[animal.model]
+body = { size = [10, 12, 12], at = [0, 5, 0] }
+head = { size = [6, 6, 8], at = [0, 10, -8] }
+leg = { size = [3, 5, 3], at = [3, 0, 4] }
+
+[[animal]]
+id = "chronarch_raven"
+name = "Raven"
+hostile = true
+biomes = ["plains"]
+health = 120
+speed = 3.6
+attack = 7
+tex = "@violet_glass"
+sound_pitch = 0.7
+aggro_range = 20
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "support"
+support = { radius = 16, interval = 8, heal = 4 }
+attacks = [
+  { name = "talon_rake", kind = "melee", damage = 7, cooldown = 1.4, damage_type = "slash" },
+]
+drops = [
+  { item = "temporal_fragment", min = 3, max = 5 },
+]
+[animal.model]
+body = { size = [8, 8, 14], at = [0, 5, 0] }
+head = { size = [6, 6, 7], at = [0, 8, -8] }
+leg = { size = [2, 5, 2], at = [3, 0, 4] }
+
+[[animal]]
+id = "the_reflection"
+name = "The Reflection"
+hostile = true
+biomes = ["plains"]
+health = 400
+speed = 3.0
+attack = 12
+tex = "@player_shirt"
+sound_pitch = 1.0
+aggro_range = 24
+ire_min = 0
+group = [1, 1]
+rarity = 1
+behavior = "controller"
+controller = { spawn = "belt_quest:cave_spider", count = 2, interval = 18.0, max = 2 }
+resist = [
+  { type = "slash", mult = 0.5 },
+  { type = "pierce", mult = 0.5 },
+  { type = "blunt", mult = 0.75 },
+  { type = "fire", mult = 0.75 },
+]
+attacks = [
+  { name = "temporal_strike", kind = "melee", damage = 12, cooldown = 1.8, damage_type = "blunt" },
+  { name = "echo_charge", kind = "charge", damage = 15, cooldown = 10.0, range = 16, damage_type = "blunt" },
+]
+drops = [
+  { item = "temporal_core", min = 1, max = 1 },
+  { item = "temporal_fragment", min = 8, max = 12 },
+]
+[animal.model]
+body = { size = [8, 12, 5], at = [0, 8, 0] }
+head = { size = [6, 6, 6], at = [0, 14, -3] }
+leg = { size = [3, 8, 3], at = [2, 0, 0] }

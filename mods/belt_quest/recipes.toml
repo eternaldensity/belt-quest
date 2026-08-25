@@ -224,3 +224,19 @@ time = 40.0
 input = "belt_quest:corrupted_tissue"
 output = "belt_quest:energy_crystal"
 time = 35.0
+
+# ---- C9: Temporal Engineering (quest-gated) ----
+
+[[recipe]]
+tech = "learned:belt_quest:temporal_shield_plate"
+station = "belt_quest:alien_fabricator"
+pattern = ["tct", "cec"]
+keys = { t = "temporal_fragment", c = "alien_alloy", e = "energy_crystal" }
+output = "belt_quest:temporal_shield_plate"
+
+[[recipe]]
+tech = "learned:belt_quest:temporal_disruptor"
+station = "belt_quest:alien_fabricator"
+pattern = ["tdt", "ce"]
+keys = { t = "temporal_fragment", d = "temporal_core", c = "alien_alloy", e = "energy_crystal" }
+output = "belt_quest:temporal_disruptor"
