@@ -9,9 +9,13 @@ See **[docs/port-plan.md](docs/port-plan.md)** for the full port plan.
 
 ## Status
 
-Planning. Milestone A (upstream capability ramp) is the active track:
-WildForge is gaining a mod test harness (E0), a ruleset/mode system (E1),
-and a third-person camera (E2) first.
+Milestone B slice + Milestone C waves landed (factory core, modular
+gear, combat breadth, Haven + outposts, dungeon set, skill tree,
+economy, alien + Chronarch arcs). See docs/port-plan.md for the
+per-wave record and docs/playtest-guide.md for the walkthrough.
+
+Wildforge's maintainability refactor (PR #88) needed no content
+changes; evidence in docs/refactor-verification.md.
 
 ## Layout
 
@@ -23,7 +27,10 @@ src/tools/         helper scripts (content lint, schema checks)
 
 ## Requirements
 
-- WildForge checkout with the belt-quest capabilities landed (see the
-  plan's Milestone A).
-- `cargo test --lib` + clippy `-D warnings` clean, run via the E0 test
-  harness once it exists.
+- WildForge checkout at or after the maintainability refactor (PR #88,
+  HEAD `6383f2c6`) with the belt-quest capabilities landed (see the
+  plan's Milestones A–C).
+- `wildforge --mod-qualification mods` PASS with this mod installed,
+  plus the WildForge playtest + registry suites green (see
+  docs/refactor-verification.md). `src/tools/lint.py` runs the
+  repo-local static checks.

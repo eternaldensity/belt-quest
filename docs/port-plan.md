@@ -105,8 +105,9 @@ Ordered by dependency; lower numbers gate higher ones.
 | E10 | **Instanced dungeon zones** | ✅ **LANDED** (WildForge `feat/capability-ramp`). The world gains a **seventh face — the Deep** (`Face::Deep`, id 6; pure addition, all save/wire ids stable): worldgen emits void there, chunk adoption is bare, geography has no cells below, and Deep chunks never persist. A dungeon = an assembly with `[assembly.dungeon] { reset }`: `World::enter_dungeon` stamps it on demand into one of 1024 reserved slots via the ordinary assembly walk (`DEEP_RUN_Y = 48`), synchronous so nobody falls through; **a player is "in a dungeon" iff their face is the Deep**. **Overworld freeze** follows sleep-consensus (all players below ⇒ sun/weather/fluids/ire/crops hold; industry and dungeon creatures keep ticking). **Checkpoints**: `dungeon_checkpoint` blocks set the party checkpoint; dungeon death keeps belongings and respawns there. **Entry/exit**: `dungeon_entry:<asm>` / `dungeon_exit` blocks; guests ride `C2S::DungeonUse` → host-validated teleport via PlayerState (PROTOCOL 44). **Reset on exit** is structural: emptied runs dissolve past their delay, chunks dropped unsaved. Loot rides existing piece-chest tables. Engine-only: dungeon content is belt-quest's. Suite 1001 passing, clippy + mod-qual clean, geode hash refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e10-instanced-dungeon-zones.md`. | E8 (feeds), E11 (HUD) |
 | E11 | **Mod-extensible UI screens** | ✅ **LANDED** (WildForge `feat/capability-ramp`). `Screen::Mod(usize)` opens the closed enum onto `screens.toml` (`[[screen]]` + four widget kinds: `label`, `kv_label`, `toggle { key }`, `button { action }`; MachineKind-style indexing). Blocks open screens with `interaction = "screen:<id>"` (client-local presentation); buttons dispatch ONE script hook, `on_screen_click(screen_id, action)` — guests ride `C2S::ScreenClick` with BOTH ids validated against the host registry (only declared buttons can fire), riding `HostFx` to where scripts live; scripts open screens via `open_screen(id)`. State model = player-KV keys (toggles write, kv_labels read). Gems sample: `gem_altar` + altar screen. Suite 1007 passing, clippy + mod-qual clean, hashes refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e11-mod-extensible-screens.md`. | E5, E6, E7, E10 |
 | E12 | **Industrial response gradient (ire repoint)** | ✅ **LANDED** (WildForge `feat/capability-ramp`). Every **lit fire machine feeds 0.01 ire/sec** to its region (one charge per distinct cell; a full bloomery firing ≈ the ire of mining its ore) and **raising any machine mouth costs 0.5 ire** once — factory output now feeds regional ire alongside extraction. **Aggression gradient**: at global tier ≥2 hungry predators size up players regardless of season/hour, and skittish wildlife startle from 75% (tier 2) / 50% (tier 3) of their flight distance. **Mode gate**: `industrial_ire = true/false` on a mode repoints it off; defaults live with `ire`. Suite 1010 passing, clippy + mod-qual clean, geode hash refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e12-industrial-response-gradient.md`. | E1 |
-| E13 | **Settlement depot logistics + economy** | Depot block with belt/rail ports feeding settlement needs; credits item + barter + market pricing hooks on top of the stall system. | E8, E11 |
-| E14 | **Save/load completeness** | Persist belt cargo, dungeon progress, skill allocation, equipment loadouts, settlement depot state in the world save. | E5, E6, E8, E10, E13 |
+| E13 | **Settlement depot logistics + economy** | ✅ **LANDED** (WildForge `main`). `BlockEntity::Depot` bound via `interaction = "depot:<settlement>"`; settlements declare `[[settlement.need]] { item, rep }`; hand deposits and belt ports deliver, reputation pays through the player-KV channel (guests via S2C::SettlementDelivery). PROTOCOL 46. Market pricing hooks remain future engine work; barter counters + settlement orders ship as content (C7). | E8, E11 |
+| E14 | **Save/load completeness** | ✅ **LANDED, folded per-capability** (no separate branch). Belt cargo rides `[[belt]]` records (E8, entities v10), dungeon reset is structural (E10), skill allocation / loadout presets / depot staging persist in their owners' state. | E5, E6, E8, E10, E13 |
+| E15 | **Guard archetype (mob-vs-mob combat)** | ✅ **LANDED** (WildForge `main`). Non-hostile creatures with `guards = true` target the nearest hostile mob, approach, and deal contact damage per swing — a real combat loop with retaliation. belt-quest's Custodian Beacon sentinel rides it. | E9 |
 
 ### 2.1 Dependency ordering
 
@@ -145,7 +146,8 @@ mod forever.
 
 ## 3. Mapping: belts system → WildForge system
 
-Authoritative, current as of WildForge HEAD `30e1c42` / belts `f176fb7`.
+Authoritative, current as of WildForge HEAD `6383f2c6` (maintainability
+refactor, verified in docs/refactor-verification.md) / belts `f176fb7`.
 
 | belts system (rpg-plan doc) | WildForge counterpart | Verdict |
 |---|---|---|
@@ -394,14 +396,14 @@ belt-quest/
 
 CI (E0 landed): install the mod into a pinned WildForge checkout's `mods/`
 tree, then run:
-1. `cargo test --lib` and `cargo clippy --lib --tests -- -D warnings` on
-   the WildForge checkout (the shared harness + full suite prove content).
+1. `cargo test --locked tests::playtest::` and
+   `cargo test --locked tests::registry_tests::` on the WildForge
+   checkout (the shared harness + playtest suite prove content).
 2. `wildforge --mod-qualification mods` — gate on exit 0. This is the
    mod-content lint: all ids register, recipes balance against the
    material ledger, textures exist, every item is reachable in survival,
    and every `main.rhai` compiles.
-
-Until content exists, this repo carries the plan + content skeletons only.
+3. `python3 src/tools/lint.py` — the repo-local static checks.
 
 ---
 
