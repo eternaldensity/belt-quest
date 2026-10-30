@@ -4,6 +4,10 @@ Walkthrough for exercising every implemented feature of the belt-quest mod
 on WildForge `main`. Organized as a sequential progression — each section
 builds on the last — with checkboxes so you can track what you've covered.
 
+> Compatibility: the content was re-qualified against WildForge `c3489c7`
+> on 2026-10-30 (see docs/refactor-verification.md); the walkthrough below
+> is unchanged because the engine update added no mod-facing features.
+
 ---
 
 ## 0. Setup

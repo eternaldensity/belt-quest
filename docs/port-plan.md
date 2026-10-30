@@ -100,13 +100,13 @@ Ordered by dependency; lower numbers gate higher ones.
 | E5 | **Skill tree system** | ✅ **LANDED** (WildForge `feat/capability-ramp`, `src/skills.rs` + `src/game/skills.rs`). Data-driven trees from `skills.toml` (schema 1): branches, tier-gated nodes (default 3 allocated previous-tier nodes in-branch), point cost defaults to tier, `stats`/`x_multipliers` effects fold into E4's `StatBlock`. Closed engine XP-source set `mine/build/craft/smelt/kill/fish/harvest` with per-source diminishing returns (`base/(1+decay·k)`), `xp_base·level^exponent` curve, `max_level` cap, respec. Level/XPs/allocations persisted in the player profile. Mode-gated: new `skills` ruleset toggle is **off** in Survival/Creative; gems `cozy` adds it. Skill screen: K toggle, XP bar in HUD, tabbed branches, respec button. Suite 957 passing, clippy + mod-qual clean, visual/geode hashes refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e5-skill-tree.md`. | E4 |
 | E6 | **Modular equipment** | ✅ **LANDED** (WildForge `feat/capability-ramp`, `src/equipment.rs` + `src/game/equipment.rs`). `items.toml` gains `frame = { slots = [ { type = "gem", max = 2 } ] }` and `component = "gem"`; a `Loadout` per worn slot (index-aligned with `armor`) slots components in/out **intact**, folding their E4 `StatModifier`s only while the frame is worn and intact. Frames disable at durability 0 (no armor points / component stats) instead of being destroyed, and repair through the crafting repair path (component materials are a subset of the frame's). Loadout presets (4, persisted in the profile) SAVE/APPLY whole configurations. New `equipment` mode toggle is **off** in Survival/Creative; gems `cozy` adds it; L opens the loadout screen. Suite 965 passing, clippy + mod-qual clean, visual/geode hashes refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e6-modular-equipment.md`. | E4 |
 | E7 | **Data-driven machine kinds** | ✅ **LANDED** (WildForge `feat/capability-ramp`, `src/machines.rs`). The closed `MachineKind` enum is now an index into `reg.machines` from `machines.toml` (schema 1): `{ id, label, handler, mouth, mouth_lit?, fire_secs, charge/fuel/reagent slots, items_per_fuel, min charge/fuel }`, bound to a closed native handler set (`bloomery`/`forge`/`kiln`/`separator`/`workbench`). Shells, lighting, ticks, click rules, and screens dispatch on the handler; persistence and templates key off the qualified id; multiplayer rides a new `S2C::MachineContainer` (PROTOCOL 42). New **workbench** handler + `Screen::Workbench`: a recipe-list station whose `[[recipe]] station` recipes are crafted from the inventory (off the free grid). Base's four machines are the same rows declared as data — stock gameplay unchanged. Sample: gems `jewel_bench` + `gem_circlet` station recipe. Suite 973 passing, clippy + mod-qual clean, visual/geode hashes refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e7-data-driven-machine-kinds.md`. | E0 (testability), E11 (screens) |
-| E8 | **Belt geometry & persistence** | ✅ **LANDED** (WildForge `feat/capability-ramp`, `src/world/belt.rs`). `BeltKind` opens to `Straight(Direction4)`/`Curve(NE/NW/SE/SW)`/`Incline`/`Switch`/`Splitter`/`Merger`, classified from block ids (eleven new world-only pieces in base); `BeltState` gains `entry_dir` + `split_phase`; `tick_belts` advances along `belt_exit`/`belt_next` (rail-mirroring connectivity + incline climb/descent + 1.5× climb draw). **Machine feed**: a belt mouth feeds a validated fire-machine's charge slots (leftover drops loose; a full machine back-pressures). **Persistence**: belt cargo rides `[[belt]]` records in `entities.toml` (version 10; loader accepts 9..=10), arcane-audited. **MP**: PROTOCOL 43, `C2S::ToggleSwitch`/`S2C::SwitchState` host-authoritative toggle — also fixes rail switches in MP. Suite 983 passing, clippy + mod-qual clean, geode hash refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e8-belt-geometry-persistence.md`. | E7 (machine feed), E10 (dungeon/lair feeds) |
+| E8 | **Belt geometry & persistence** | ✅ **LANDED** (WildForge `feat/capability-ramp`, `src/world/belt.rs`). `BeltKind` opens to `Straight(Direction4)`/`Curve(NE/NW/SE/SW)`/`Incline`/`Switch`/`Splitter`/`Merger`, classified from block ids (eleven new world-only pieces in base); `BeltState` gains `entry_dir` + `split_phase`; `tick_belts` advances along `belt_exit`/`belt_next` (rail-mirroring connectivity + incline climb/descent + 1.5× climb draw). **Machine feed**: a belt mouth feeds a validated fire-machine's charge slots (leftover drops loose; a full machine back-pressures). **Persistence**: belt cargo rides `[[belt]]` records in `entities.toml` (version 10 at E8; current HEAD writes 11 and the loader accepts 9..=11), arcane-audited. **MP**: PROTOCOL 43, `C2S::ToggleSwitch`/`S2C::SwitchState` host-authoritative toggle — also fixes rail switches in MP. Suite 983 passing, clippy + mod-qual clean, geode hash refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e8-belt-geometry-persistence.md`. | E7 (machine feed), E10 (dungeon/lair feeds) |
 | E9 | **Enemy AI archetype extension + nests** | ✅ **LANDED** (WildForge `feat/capability-ramp`). `BehaviorArchetype` opens to eight data-driven layers (each with optional params via `AnimalDef.archetype`): **Rusher** (sprint), **Tank** (reduced knockback), **Sniper** (distance band), **Support** (`HealPulse` to allies), **Swarm** (brood on death), **Controller** (recurring minion summons, capped), **Phaser** (cooldown blink), **Shield-Bearer** (front-facing reduction; E3 backstab inverted). **Nests**: `nests.toml` `[[nest]] { block, species, radius, interval, cap }`; a `World::nests` record is maintained by `set_block_state_at` (placing records it, breaking clears it), persisted as a `WFN1` sidecar; `tick_hostile_spawns` makes a nest-bound species spawn only near its live nests (light/ire-gated, capped) — **clearing a nest stops its respawns**. `spawn:nest:<id>` worldgen markers. Engine-only: species + nest layouts are belt-quest (C6) content. Suite 997 passing, clippy + mod-qual clean, geode hash refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e9-enemy-ai-archetypes-nests.md`. | E3 (damage/backstab interaction) |
 | E10 | **Instanced dungeon zones** | ✅ **LANDED** (WildForge `feat/capability-ramp`). The world gains a **seventh face — the Deep** (`Face::Deep`, id 6; pure addition, all save/wire ids stable): worldgen emits void there, chunk adoption is bare, geography has no cells below, and Deep chunks never persist. A dungeon = an assembly with `[assembly.dungeon] { reset }`: `World::enter_dungeon` stamps it on demand into one of 1024 reserved slots via the ordinary assembly walk (`DEEP_RUN_Y = 48`), synchronous so nobody falls through; **a player is "in a dungeon" iff their face is the Deep**. **Overworld freeze** follows sleep-consensus (all players below ⇒ sun/weather/fluids/ire/crops hold; industry and dungeon creatures keep ticking). **Checkpoints**: `dungeon_checkpoint` blocks set the party checkpoint; dungeon death keeps belongings and respawns there. **Entry/exit**: `dungeon_entry:<asm>` / `dungeon_exit` blocks; guests ride `C2S::DungeonUse` → host-validated teleport via PlayerState (PROTOCOL 44). **Reset on exit** is structural: emptied runs dissolve past their delay, chunks dropped unsaved. Loot rides existing piece-chest tables. Engine-only: dungeon content is belt-quest's. Suite 1001 passing, clippy + mod-qual clean, geode hash refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e10-instanced-dungeon-zones.md`. | E8 (feeds), E11 (HUD) |
 | E11 | **Mod-extensible UI screens** | ✅ **LANDED** (WildForge `feat/capability-ramp`). `Screen::Mod(usize)` opens the closed enum onto `screens.toml` (`[[screen]]` + four widget kinds: `label`, `kv_label`, `toggle { key }`, `button { action }`; MachineKind-style indexing). Blocks open screens with `interaction = "screen:<id>"` (client-local presentation); buttons dispatch ONE script hook, `on_screen_click(screen_id, action)` — guests ride `C2S::ScreenClick` with BOTH ids validated against the host registry (only declared buttons can fire), riding `HostFx` to where scripts live; scripts open screens via `open_screen(id)`. State model = player-KV keys (toggles write, kv_labels read). Gems sample: `gem_altar` + altar screen. Suite 1007 passing, clippy + mod-qual clean, hashes refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e11-mod-extensible-screens.md`. | E5, E6, E7, E10 |
 | E12 | **Industrial response gradient (ire repoint)** | ✅ **LANDED** (WildForge `feat/capability-ramp`). Every **lit fire machine feeds 0.01 ire/sec** to its region (one charge per distinct cell; a full bloomery firing ≈ the ire of mining its ore) and **raising any machine mouth costs 0.5 ire** once — factory output now feeds regional ire alongside extraction. **Aggression gradient**: at global tier ≥2 hungry predators size up players regardless of season/hour, and skittish wildlife startle from 75% (tier 2) / 50% (tier 3) of their flight distance. **Mode gate**: `industrial_ire = true/false` on a mode repoints it off; defaults live with `ire`. Suite 1010 passing, clippy + mod-qual clean, geode hash refreshed. Task brief: `docs/extension-plans/wildforge-task-brief-capability-e12-industrial-response-gradient.md`. | E1 |
 | E13 | **Settlement depot logistics + economy** | ✅ **LANDED** (WildForge `main`). `BlockEntity::Depot` bound via `interaction = "depot:<settlement>"`; settlements declare `[[settlement.need]] { item, rep }`; hand deposits and belt ports deliver, reputation pays through the player-KV channel (guests via S2C::SettlementDelivery). PROTOCOL 46. Market pricing hooks remain future engine work; barter counters + settlement orders ship as content (C7). | E8, E11 |
-| E14 | **Save/load completeness** | ✅ **LANDED, folded per-capability** (no separate branch). Belt cargo rides `[[belt]]` records (E8, entities v10), dungeon reset is structural (E10), skill allocation / loadout presets / depot staging persist in their owners' state. | E5, E6, E8, E10, E13 |
+| E14 | **Save/load completeness** | ✅ **LANDED, folded per-capability** (no separate branch). Belt cargo rides `[[belt]]` records (E8, entities v10 at landing; v11 now), dungeon reset is structural (E10), skill allocation / loadout presets / depot staging persist in their owners' state. | E5, E6, E8, E10, E13 |
 | E15 | **Guard archetype (mob-vs-mob combat)** | ✅ **LANDED** (WildForge `main`). Non-hostile creatures with `guards = true` target the nearest hostile mob, approach, and deal contact damage per swing — a real combat loop with retaliation. belt-quest's Custodian Beacon sentinel rides it. | E9 |
 
 ### 2.1 Dependency ordering
@@ -146,8 +146,18 @@ mod forever.
 
 ## 3. Mapping: belts system → WildForge system
 
-Authoritative, current as of WildForge HEAD `6383f2c6` (maintainability
-refactor, verified in docs/refactor-verification.md) / belts `f176fb7`.
+Authoritative, current as of WildForge HEAD `c3489c7` (October 2026
+update; re-verified in docs/refactor-verification.md) / belts `f176fb7`.
+
+> **Update check (2026-10-30).** WildForge advanced from `6383f2c6`
+> (maintainability refactor) through `c3489c7`. The intervening work is
+> engine runtime and presentation: multiplayer authority/TLS hardening,
+> terrain streaming and shoreline reconciliation, light-cache reuse,
+> raycast resident-chunk reuse, frame/GPU profiling, and the render-work
+> capture protocol. It introduced no TOML schema, Rhai host function,
+> `world_api`, wire protocol, save-codec, or content-identity change, so
+> the mapping above and all belt-quest content remain valid. Evidence and
+> commands are in docs/refactor-verification.md.
 
 | belts system (rpg-plan doc) | WildForge counterpart | Verdict |
 |---|---|---|
@@ -387,11 +397,10 @@ formats permit.
 
 ```
 belt-quest/
-  mods/belt_quest/          # the mod: mod.toml + *.toml + main.rhai + textures/
-  docs/                     # this plan + capability task briefs once owned here
-  src/tools/                # helper scripts (content lint, .toml schema checks)
-  Cargo.toml                # dev-only: test harness pinning a WildForge checkout
-  .gitmodules               # WildForge pinned (submodule or git dep) for CI
+  mods/belt_quest/          # the mod: mod.toml + *.toml + main.rhai
+                            # (textures alias base tiles; no binary art yet)
+  docs/                     # this plan + verification records
+  src/tools/                # repo-local content lint
 ```
 
 CI (E0 landed): install the mod into a pinned WildForge checkout's `mods/`
@@ -436,13 +445,23 @@ tree, then run:
 
 ---
 
-## 8. Immediate next actions
+## 8. Remaining work
 
-1. Land **E0** (mod test harness) in WildForge — unblocks this repo's CI.
-2. Land **E1** (ruleset) — unblocks the mod-out story and every gated
-   capability.
-3. Land **E2** (third-person camera) — the ethos-critical combat item.
-4. File the E3–E14 task briefs in WildForge `docs/extension-plans/` as
-   the capability ramp proceeds.
-5. Scaffold `mods/belt_quest/mod.toml` + a starter-world demo mod in this
-   repo as soon as E0+E1 exist.
+Every capability in Part 2 (E0–E15) and the Milestone B/C waves listed
+above has landed and is qualified against WildForge `c3489c7`. What
+remains is post-slice content and upkeep:
+
+1. **Post-slice Chronarch content** — the escalation ladder, Crawler
+   rail push, bootstrap-paradox dialogue trees, and the three-ending
+   choice. These depend on settled save/reload semantics (E14) and are
+   deliberately deferred.
+2. **Aesthetic decision** — keep voxel art or justify a model-import
+   capability (Risk 1). Decide after the slice, not before.
+3. **Keep the compatibility loop** — on every WildForge bump, install
+   this repo's `mods/belt_quest`, run `--mod-qualification`, the
+   playtest/registry suites, and `src/tools/lint.py`, then record the
+   results in docs/refactor-verification.md. WildForge's published
+   content pin (`tools/install_test_mods.py`, `0f09088`) is
+   byte-identical to `mods/belt_quest` at this repo's HEAD; later
+   documentation/tooling commits do not touch that tree, so a
+   docs-only update does not require a re-pin.

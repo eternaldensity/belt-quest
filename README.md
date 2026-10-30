@@ -14,22 +14,25 @@ gear, combat breadth, Haven + outposts, dungeon set, skill tree,
 economy, alien + Chronarch arcs). See docs/port-plan.md for the
 per-wave record and docs/playtest-guide.md for the walkthrough.
 
-Wildforge's maintainability refactor (PR #88) needed no content
-changes; evidence in docs/refactor-verification.md.
+Wildforge's maintainability refactor (PR #88) and the follow-up update
+(October 2026: streaming, lighting, rendering, hydrology, multiplayer
+security, identity) needed no content changes; evidence in
+docs/refactor-verification.md.
 
 ## Layout
 
 ```
-mods/belt_quest/   the mod: mod.toml + content TOML + main.rhai + textures/
-docs/              port plan + owned task briefs
-src/tools/         helper scripts (content lint, schema checks)
+mods/belt_quest/   the mod: mod.toml + content TOML + main.rhai
+                   (textures alias base tiles; no binary art yet)
+docs/              port plan + verification records
+src/tools/         helper scripts (repo-local content lint)
 ```
 
 ## Requirements
 
-- WildForge checkout at or after the maintainability refactor (PR #88,
-  HEAD `6383f2c6`) with the belt-quest capabilities landed (see the
-  plan's Milestones A–C).
+- WildForge checkout at or after the October 2026 update (HEAD
+  `c3489c7`) with the belt-quest capabilities (E0–E15) landed — see the
+  plan's Milestones A–C.
 - `wildforge --mod-qualification mods` PASS with this mod installed,
   plus the WildForge playtest + registry suites green (see
   docs/refactor-verification.md). `src/tools/lint.py` runs the
